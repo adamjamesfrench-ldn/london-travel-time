@@ -1,65 +1,171 @@
-import Image from "next/image";
+'use client';
+
+import { useState, useCallback, useEffect, useRef } from 'react';
+import dynamic from 'next/dynamic';
+import ControlPanel from '@/components/ControlPanel';
+import { fetchIsochrones } from '@/lib/traveltime';
+import type { LocationResult } from '@/components/LocationSearch';
+import { parseResults, type ParsedIsochrone } from '@/lib/geo-utils';
+import { DEFAULT_MODES, DEFAULT_TRAVEL_TIME_MINUTES, type TransportMode } from '@/lib/constants';
+
+const Map = dynamic(() => import('@/components/Map'), { ssr: false });
+
+function getTimeBands(maxMinutes: number): number[] {
+  const bands: number[] = [];
+  if (maxMinutes >= 10) bands.push(10);
+  if (maxMinutes >= 20) bands.push(20);
+  if (maxMinutes >= 30) bands.push(Math.min(maxMinutes, 30));
+  if (maxMinutes > 30) bands.push(maxMinutes);
+  if (bands.length === 0) bands.push(maxMinutes);
+  return bands;
+}
+
+function buildDepartureISO(timeStr: string): string {
+  const [h, m] = timeStr.split(':').map(Number);
+  const now = new Date();
+  const date = new Date(now);
+  do {
+    date.setDate(date.getDate() + 1);
+  } while (date.getDay() === 0 || date.getDay() === 6);
+  date.setHours(h, m, 0, 0);
+  return date.toISOString();
+}
 
 export default function Home() {
+  const [origin, setOrigin] = useState<{ lat: number; lng: number } | null>(null);
+  const [locationName, setLocationName] = useState<string | null>(null);
+  const [district, setDistrict] = useState<string | null>(null);
+  const [travelTime, setTravelTime] = useState(DEFAULT_TRAVEL_TIME_MINUTES);
+  const [activeModes, setActiveModes] = useState<TransportMode[]>(DEFAULT_MODES);
+  const [departureTime, setDepartureTime] = useState('08:30');
+  const [isochrones, setIsochrones] = useState<ParsedIsochrone[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [flyToTarget, setFlyToTarget] = useState<{ lat: number; lng: number } | null>(null);
+  const fetchRef = useRef(0);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const pc = params.get('postcode');
+    const time = params.get('time');
+    const modes = params.get('modes');
+    const dep = params.get('departure');
+
+    if (time) setTravelTime(Number(time));
+    if (modes) setActiveModes(modes.split(',') as TransportMode[]);
+    if (dep) setDepartureTime(dep);
+    // URL params restored via location name (no auto-geocode on reload for now)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!locationName) return;
+    const params = new URLSearchParams();
+    params.set('location', locationName);
+    params.set('time', String(travelTime));
+    params.set('modes', activeModes.join(','));
+    params.set('departure', departureTime);
+    window.history.replaceState({}, '', `?${params.toString()}`);
+  }, [locationName, travelTime, activeModes, departureTime]);
+
+  const loadIsochrones = useCallback(
+    async (lat: number, lng: number, modes: TransportMode[], minutes: number, depTime: string) => {
+      if (modes.length === 0) {
+        setIsochrones([]);
+        return;
+      }
+
+      const id = ++fetchRef.current;
+      setIsLoading(true);
+      setError(null);
+
+      try {
+        const results = await fetchIsochrones({
+          lat,
+          lng,
+          modes,
+          timeBands: getTimeBands(minutes),
+          departureTime: buildDepartureISO(depTime),
+        });
+
+        if (id === fetchRef.current) {
+          setIsochrones(parseResults(results));
+        }
+      } catch (err) {
+        if (id === fetchRef.current) {
+          setError(err instanceof Error ? err.message : 'Failed to load isochrones');
+        }
+      } finally {
+        if (id === fetchRef.current) {
+          setIsLoading(false);
+        }
+      }
+    },
+    []
+  );
+
+  const handleLocationSelect = useCallback(
+    (location: LocationResult) => {
+      setError(null);
+      setLocationName(location.name);
+      setDistrict(location.district);
+      setOrigin({ lat: location.lat, lng: location.lng });
+      setFlyToTarget({ lat: location.lat, lng: location.lng });
+      loadIsochrones(location.lat, location.lng, activeModes, travelTime, departureTime);
+    },
+    [activeModes, travelTime, departureTime, loadIsochrones]
+  );
+
+  const handleMapClick = useCallback(
+    async (lat: number, lng: number) => {
+      setOrigin({ lat, lng });
+      setLocationName(`${lat.toFixed(4)}, ${lng.toFixed(4)}`);
+      setDistrict(null);
+      loadIsochrones(lat, lng, activeModes, travelTime, departureTime);
+    },
+    [activeModes, travelTime, departureTime, loadIsochrones]
+  );
+
+  const handleLeaderboardSelect = useCallback(
+    (lat: number, lng: number, name: string) => {
+      setOrigin({ lat, lng });
+      setLocationName(name);
+      setDistrict(null);
+      setFlyToTarget({ lat, lng });
+      loadIsochrones(lat, lng, activeModes, travelTime, departureTime);
+    },
+    [activeModes, travelTime, departureTime, loadIsochrones]
+  );
+
+  useEffect(() => {
+    if (origin) {
+      loadIsochrones(origin.lat, origin.lng, activeModes, travelTime, departureTime);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeModes, travelTime, departureTime]);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="relative w-screen h-screen overflow-hidden bg-[#0a0c13]">
+      <Map origin={origin} isochrones={isochrones} onMapClick={handleMapClick} flyToTarget={flyToTarget} />
+      <ControlPanel
+        onLocationSelect={handleLocationSelect}
+        currentLocation={locationName}
+        currentDistrict={district}
+        travelTime={travelTime}
+        onTravelTimeChange={setTravelTime}
+        activeModes={activeModes}
+        onModesChange={setActiveModes}
+        departureTime={departureTime}
+        onDepartureTimeChange={setDepartureTime}
+        isochrones={isochrones}
+        isLoading={isLoading}
+        onLeaderboardSelect={handleLeaderboardSelect}
+      />
+      {error && (
+        <div className="absolute bottom-4 right-4 z-20 bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3 text-red-400 text-sm max-w-sm">
+          {error}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      )}
+    </main>
   );
 }

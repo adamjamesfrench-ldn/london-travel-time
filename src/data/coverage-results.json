@@ -1,0 +1,3269 @@
+{
+  "generatedAt": "2026-04-06T19:33:43.337Z",
+  "travelTimeMinutes": 30,
+  "totalPoints": 225,
+  "points": [
+    {
+      "id": "kings-cross",
+      "name": "King's Cross",
+      "lat": 51.5308,
+      "lng": -0.1238,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 113.7,
+        "transit": 78.8,
+        "driving": 39.9,
+        "multimodal": 82.7
+      }
+    },
+    {
+      "id": "euston",
+      "name": "Euston",
+      "lat": 51.5282,
+      "lng": -0.1337,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.8,
+        "cycling": 109.1,
+        "transit": 59.3,
+        "driving": 50.7,
+        "multimodal": 75
+      }
+    },
+    {
+      "id": "st-pancras",
+      "name": "St Pancras",
+      "lat": 51.5321,
+      "lng": -0.1266,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 112.8,
+        "transit": 55.2,
+        "driving": 42.9,
+        "multimodal": 63.9
+      }
+    },
+    {
+      "id": "paddington",
+      "name": "Paddington",
+      "lat": 51.5154,
+      "lng": -0.1755,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 117.4,
+        "transit": 60.9,
+        "driving": 115.8,
+        "multimodal": 132
+      }
+    },
+    {
+      "id": "liverpool-street",
+      "name": "Liverpool Street",
+      "lat": 51.5178,
+      "lng": -0.0823,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 112.5,
+        "transit": 95,
+        "driving": 34.2,
+        "multimodal": 89.2
+      }
+    },
+    {
+      "id": "victoria",
+      "name": "Victoria",
+      "lat": 51.4965,
+      "lng": -0.1447,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 112.4,
+        "transit": 68.3,
+        "driving": 46.7,
+        "multimodal": 78.5
+      }
+    },
+    {
+      "id": "waterloo",
+      "name": "Waterloo",
+      "lat": 51.5033,
+      "lng": -0.1127,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 109.7,
+        "transit": 82.4,
+        "driving": 34.9,
+        "multimodal": 83.6
+      }
+    },
+    {
+      "id": "london-bridge",
+      "name": "London Bridge",
+      "lat": 51.5052,
+      "lng": -0.0864,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.4,
+        "cycling": 108.5,
+        "transit": 69.7,
+        "driving": 35.8,
+        "multimodal": 76.9
+      }
+    },
+    {
+      "id": "bank",
+      "name": "Bank",
+      "lat": 51.5133,
+      "lng": -0.0886,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.4,
+        "cycling": 117.1,
+        "transit": 75.7,
+        "driving": 34.1,
+        "multimodal": 78.8
+      }
+    },
+    {
+      "id": "oxford-circus",
+      "name": "Oxford Circus",
+      "lat": 51.5152,
+      "lng": -0.1415,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 112.7,
+        "transit": 69.4,
+        "driving": 35.5,
+        "multimodal": 74.3
+      }
+    },
+    {
+      "id": "tottenham-court-road",
+      "name": "Tottenham Court Road",
+      "lat": 51.5165,
+      "lng": -0.131,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.8,
+        "cycling": 108.3,
+        "transit": 67.9,
+        "driving": 33.3,
+        "multimodal": 73.1
+      }
+    },
+    {
+      "id": "leicester-square",
+      "name": "Leicester Square",
+      "lat": 51.5113,
+      "lng": -0.1281,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 115.4,
+        "transit": 54.9,
+        "driving": 26.9,
+        "multimodal": 55.5
+      }
+    },
+    {
+      "id": "piccadilly-circus",
+      "name": "Piccadilly Circus",
+      "lat": 51.51,
+      "lng": -0.1347,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 113.2,
+        "transit": 55.6,
+        "driving": 28,
+        "multimodal": 56.3
+      }
+    },
+    {
+      "id": "covent-garden",
+      "name": "Covent Garden",
+      "lat": 51.5129,
+      "lng": -0.1243,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 115.1,
+        "transit": 45.9,
+        "driving": 24.8,
+        "multimodal": 47.4
+      }
+    },
+    {
+      "id": "holborn",
+      "name": "Holborn",
+      "lat": 51.5174,
+      "lng": -0.1201,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.8,
+        "cycling": 103.7,
+        "transit": 48.1,
+        "driving": 34.8,
+        "multimodal": 52.3
+      }
+    },
+    {
+      "id": "chancery-lane",
+      "name": "Chancery Lane",
+      "lat": 51.5185,
+      "lng": -0.1112,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 112.3,
+        "transit": 51.2,
+        "driving": 36.7,
+        "multimodal": 58.5
+      }
+    },
+    {
+      "id": "moorgate",
+      "name": "Moorgate",
+      "lat": 51.5186,
+      "lng": -0.0886,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 111.1,
+        "transit": 57.6,
+        "driving": 35.9,
+        "multimodal": 59.9
+      }
+    },
+    {
+      "id": "old-street",
+      "name": "Old Street",
+      "lat": 51.5263,
+      "lng": -0.0876,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.2,
+        "cycling": 108.7,
+        "transit": 58.8,
+        "driving": 40,
+        "multimodal": 63.9
+      }
+    },
+    {
+      "id": "angel",
+      "name": "Angel",
+      "lat": 51.5322,
+      "lng": -0.1058,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.2,
+        "cycling": 114.7,
+        "transit": 49.8,
+        "driving": 39.5,
+        "multimodal": 58.2
+      }
+    },
+    {
+      "id": "warren-street",
+      "name": "Warren Street",
+      "lat": 51.5247,
+      "lng": -0.1384,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 98.9,
+        "transit": 55.5,
+        "driving": 71.1,
+        "multimodal": 90.9
+      }
+    },
+    {
+      "id": "goodge-street",
+      "name": "Goodge Street",
+      "lat": 51.5205,
+      "lng": -0.1347,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10,
+        "cycling": 107,
+        "transit": 58.6,
+        "driving": 39.3,
+        "multimodal": 67.9
+      }
+    },
+    {
+      "id": "russell-square",
+      "name": "Russell Square",
+      "lat": 51.523,
+      "lng": -0.1244,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.1,
+        "cycling": 111.8,
+        "transit": 33.8,
+        "driving": 39.5,
+        "multimodal": 49.1
+      }
+    },
+    {
+      "id": "embankment",
+      "name": "Embankment",
+      "lat": 51.5074,
+      "lng": -0.1223,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.7,
+        "cycling": 107.9,
+        "transit": 51.7,
+        "driving": 34.1,
+        "multimodal": 56
+      }
+    },
+    {
+      "id": "westminster",
+      "name": "Westminster",
+      "lat": 51.501,
+      "lng": -0.1254,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.1,
+        "cycling": 114,
+        "transit": 48.1,
+        "driving": 47.3,
+        "multimodal": 62
+      }
+    },
+    {
+      "id": "green-park",
+      "name": "Green Park",
+      "lat": 51.5067,
+      "lng": -0.1428,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.2,
+        "cycling": 116.6,
+        "transit": 60.4,
+        "driving": 55.7,
+        "multimodal": 79.3
+      }
+    },
+    {
+      "id": "bond-street",
+      "name": "Bond Street",
+      "lat": 51.5142,
+      "lng": -0.1494,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 112,
+        "transit": 82.6,
+        "driving": 43.6,
+        "multimodal": 85.5
+      }
+    },
+    {
+      "id": "marble-arch",
+      "name": "Marble Arch",
+      "lat": 51.5136,
+      "lng": -0.1586,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.7,
+        "cycling": 111.9,
+        "transit": 68.1,
+        "driving": 66.7,
+        "multimodal": 84.8
+      }
+    },
+    {
+      "id": "hyde-park-corner",
+      "name": "Hyde Park Corner",
+      "lat": 51.5027,
+      "lng": -0.1527,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 12.4,
+        "cycling": 116.3,
+        "transit": 60.9,
+        "driving": 73.1,
+        "multimodal": 94.3
+      }
+    },
+    {
+      "id": "pimlico",
+      "name": "Pimlico",
+      "lat": 51.4893,
+      "lng": -0.1334,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.1,
+        "cycling": 107.3,
+        "transit": 61.4,
+        "driving": 54.3,
+        "multimodal": 79.6
+      }
+    },
+    {
+      "id": "vauxhall",
+      "name": "Vauxhall",
+      "lat": 51.4861,
+      "lng": -0.1253,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.1,
+        "cycling": 114,
+        "transit": 71.7,
+        "driving": 60.9,
+        "multimodal": 93.8
+      }
+    },
+    {
+      "id": "temple",
+      "name": "Temple",
+      "lat": 51.5111,
+      "lng": -0.1141,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10,
+        "cycling": 110.4,
+        "transit": 31.2,
+        "driving": 34.4,
+        "multimodal": 42.4
+      }
+    },
+    {
+      "id": "blackfriars",
+      "name": "Blackfriars",
+      "lat": 51.512,
+      "lng": -0.104,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 113.9,
+        "transit": 57.7,
+        "driving": 37.6,
+        "multimodal": 64.4
+      }
+    },
+    {
+      "id": "st-pauls",
+      "name": "St Paul's",
+      "lat": 51.5154,
+      "lng": -0.0983,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10,
+        "cycling": 107.2,
+        "transit": 45.4,
+        "driving": 37.2,
+        "multimodal": 54.4
+      }
+    },
+    {
+      "id": "mansion-house",
+      "name": "Mansion House",
+      "lat": 51.5122,
+      "lng": -0.094,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 115.8,
+        "transit": 47.9,
+        "driving": 35.5,
+        "multimodal": 54.1
+      }
+    },
+    {
+      "id": "cannon-street",
+      "name": "Cannon Street",
+      "lat": 51.5114,
+      "lng": -0.0901,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 114.7,
+        "transit": 63.4,
+        "driving": 39.8,
+        "multimodal": 69.2
+      }
+    },
+    {
+      "id": "monument",
+      "name": "Monument",
+      "lat": 51.5108,
+      "lng": -0.0863,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 116.5,
+        "transit": 59.1,
+        "driving": 46.7,
+        "multimodal": 68.8
+      }
+    },
+    {
+      "id": "tower-hill",
+      "name": "Tower Hill",
+      "lat": 51.5098,
+      "lng": -0.0766,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.9,
+        "cycling": 108.3,
+        "transit": 35.4,
+        "driving": 93.6,
+        "multimodal": 101.3
+      }
+    },
+    {
+      "id": "aldgate",
+      "name": "Aldgate",
+      "lat": 51.5143,
+      "lng": -0.0755,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 111.2,
+        "transit": 46.7,
+        "driving": 69.3,
+        "multimodal": 85.5
+      }
+    },
+    {
+      "id": "aldgate-east",
+      "name": "Aldgate East",
+      "lat": 51.5152,
+      "lng": -0.0715,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 107.1,
+        "transit": 40.6,
+        "driving": 81.2,
+        "multimodal": 91.8
+      }
+    },
+    {
+      "id": "camden-town",
+      "name": "Camden Town",
+      "lat": 51.5392,
+      "lng": -0.1426,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.5,
+        "cycling": 116.3,
+        "transit": 45.2,
+        "driving": 53.6,
+        "multimodal": 65.2
+      }
+    },
+    {
+      "id": "tufnell-park",
+      "name": "Tufnell Park",
+      "lat": 51.5567,
+      "lng": -0.138,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.2,
+        "cycling": 117.2,
+        "transit": 25.7,
+        "driving": 86.9,
+        "multimodal": 89.1
+      }
+    },
+    {
+      "id": "archway",
+      "name": "Archway",
+      "lat": 51.5653,
+      "lng": -0.1353,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 116.7,
+        "transit": 48.8,
+        "driving": 90.2,
+        "multimodal": 98.1
+      }
+    },
+    {
+      "id": "highgate",
+      "name": "Highgate",
+      "lat": 51.5777,
+      "lng": -0.1466,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 12.5,
+        "cycling": 140.7,
+        "transit": 45.3,
+        "driving": 143.8,
+        "multimodal": 150.9
+      }
+    },
+    {
+      "id": "east-finchley",
+      "name": "East Finchley",
+      "lat": 51.5874,
+      "lng": -0.165,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.4,
+        "cycling": 139.4,
+        "transit": 38.7,
+        "driving": 193.3,
+        "multimodal": 195.3
+      }
+    },
+    {
+      "id": "finchley-central",
+      "name": "Finchley Central",
+      "lat": 51.6012,
+      "lng": -0.1927,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 139.4,
+        "transit": 40.6,
+        "driving": 335.4,
+        "multimodal": 337.7
+      }
+    },
+    {
+      "id": "stockwell",
+      "name": "Stockwell",
+      "lat": 51.4723,
+      "lng": -0.1228,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 110.8,
+        "transit": 55,
+        "driving": 64.7,
+        "multimodal": 83.5
+      }
+    },
+    {
+      "id": "oval",
+      "name": "Oval",
+      "lat": 51.4819,
+      "lng": -0.1132,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.8,
+        "cycling": 108.2,
+        "transit": 54.7,
+        "driving": 60.7,
+        "multimodal": 78.5
+      }
+    },
+    {
+      "id": "kennington",
+      "name": "Kennington",
+      "lat": 51.4884,
+      "lng": -0.1053,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 104.9,
+        "transit": 50.1,
+        "driving": 55.9,
+        "multimodal": 71
+      }
+    },
+    {
+      "id": "elephant-and-castle",
+      "name": "Elephant & Castle",
+      "lat": 51.4943,
+      "lng": -0.1001,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 106.7,
+        "transit": 51.2,
+        "driving": 50.3,
+        "multimodal": 60.7
+      }
+    },
+    {
+      "id": "borough",
+      "name": "Borough",
+      "lat": 51.5011,
+      "lng": -0.0943,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.1,
+        "cycling": 106.2,
+        "transit": 40.6,
+        "driving": 46,
+        "multimodal": 56
+      }
+    },
+    {
+      "id": "clapham-north",
+      "name": "Clapham North",
+      "lat": 51.4649,
+      "lng": -0.1299,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.2,
+        "cycling": 113.1,
+        "transit": 58.7,
+        "driving": 64.6,
+        "multimodal": 82.4
+      }
+    },
+    {
+      "id": "clapham-common",
+      "name": "Clapham Common",
+      "lat": 51.4618,
+      "lng": -0.1384,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.5,
+        "cycling": 118,
+        "transit": 56.4,
+        "driving": 68.1,
+        "multimodal": 83.1
+      }
+    },
+    {
+      "id": "morden",
+      "name": "Morden",
+      "lat": 51.4022,
+      "lng": -0.1948,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 12.1,
+        "cycling": 139.5,
+        "transit": 37.3,
+        "driving": 168.1,
+        "multimodal": 170.4
+      }
+    },
+    {
+      "id": "brixton",
+      "name": "Brixton",
+      "lat": 51.4627,
+      "lng": -0.1145,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 111,
+        "transit": 48.4,
+        "driving": 58,
+        "multimodal": 71.3
+      }
+    },
+    {
+      "id": "highbury-islington",
+      "name": "Highbury & Islington",
+      "lat": 51.546,
+      "lng": -0.104,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.1,
+        "cycling": 113.4,
+        "transit": 64.2,
+        "driving": 53.8,
+        "multimodal": 77
+      }
+    },
+    {
+      "id": "finsbury-park",
+      "name": "Finsbury Park",
+      "lat": 51.5642,
+      "lng": -0.1065,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 123.7,
+        "transit": 58.8,
+        "driving": 70,
+        "multimodal": 85.3
+      }
+    },
+    {
+      "id": "seven-sisters",
+      "name": "Seven Sisters",
+      "lat": 51.5822,
+      "lng": -0.0749,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 126.4,
+        "transit": 63.6,
+        "driving": 84.2,
+        "multimodal": 102.1
+      }
+    },
+    {
+      "id": "tottenham-hale",
+      "name": "Tottenham Hale",
+      "lat": 51.5882,
+      "lng": -0.0594,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.5,
+        "cycling": 131.8,
+        "transit": 57.5,
+        "driving": 68.4,
+        "multimodal": 87.7
+      }
+    },
+    {
+      "id": "walthamstow-central",
+      "name": "Walthamstow Central",
+      "lat": 51.583,
+      "lng": -0.0197,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 127.3,
+        "transit": 38.2,
+        "driving": 103.9,
+        "multimodal": 110.1
+      }
+    },
+    {
+      "id": "south-kensington",
+      "name": "South Kensington",
+      "lat": 51.4941,
+      "lng": -0.1738,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 112.4,
+        "transit": 33.1,
+        "driving": 85.9,
+        "multimodal": 90.1
+      }
+    },
+    {
+      "id": "gloucester-road",
+      "name": "Gloucester Road",
+      "lat": 51.4945,
+      "lng": -0.1829,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 114.3,
+        "transit": 36.9,
+        "driving": 116.8,
+        "multimodal": 122.8
+      }
+    },
+    {
+      "id": "earls-court",
+      "name": "Earl's Court",
+      "lat": 51.4914,
+      "lng": -0.1934,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 107.1,
+        "transit": 28.7,
+        "driving": 175.5,
+        "multimodal": 180.3
+      }
+    },
+    {
+      "id": "hammersmith",
+      "name": "Hammersmith",
+      "lat": 51.4927,
+      "lng": -0.2246,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 123,
+        "transit": 33.9,
+        "driving": 136.6,
+        "multimodal": 139.8
+      }
+    },
+    {
+      "id": "barons-court",
+      "name": "Baron's Court",
+      "lat": 51.4903,
+      "lng": -0.2139,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.9,
+        "cycling": 116.3,
+        "transit": 22,
+        "driving": 265.8,
+        "multimodal": 270.6
+      }
+    },
+    {
+      "id": "turnham-green",
+      "name": "Turnham Green",
+      "lat": 51.4951,
+      "lng": -0.2547,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.9,
+        "cycling": 120.1,
+        "transit": 22.1,
+        "driving": 238.1,
+        "multimodal": 243
+      }
+    },
+    {
+      "id": "acton-town",
+      "name": "Acton Town",
+      "lat": 51.5028,
+      "lng": -0.2801,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.2,
+        "cycling": 133.4,
+        "transit": 27.6,
+        "driving": 367.4,
+        "multimodal": 373.8
+      }
+    },
+    {
+      "id": "ealing-common",
+      "name": "Ealing Common",
+      "lat": 51.5101,
+      "lng": -0.2883,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.6,
+        "cycling": 133,
+        "transit": 29.8,
+        "driving": 389.9,
+        "multimodal": 393.1
+      }
+    },
+    {
+      "id": "holloway-road",
+      "name": "Holloway Road",
+      "lat": 51.5526,
+      "lng": -0.1132,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.3,
+        "cycling": 107.7,
+        "transit": 44.5,
+        "driving": 65.1,
+        "multimodal": 78.1
+      }
+    },
+    {
+      "id": "caledonian-road",
+      "name": "Caledonian Road",
+      "lat": 51.5481,
+      "lng": -0.1188,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 5.8,
+        "cycling": 93.6,
+        "transit": 26.7,
+        "driving": 62.8,
+        "multimodal": 68.8
+      }
+    },
+    {
+      "id": "arsenal",
+      "name": "Arsenal",
+      "lat": 51.5586,
+      "lng": -0.1059,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10,
+        "cycling": 114.4,
+        "transit": 31.8,
+        "driving": 35.6,
+        "multimodal": 46.8
+      }
+    },
+    {
+      "id": "manor-house",
+      "name": "Manor House",
+      "lat": 51.5712,
+      "lng": -0.0958,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.5,
+        "cycling": 127.3,
+        "transit": 51.9,
+        "driving": 69.1,
+        "multimodal": 77.1
+      }
+    },
+    {
+      "id": "turnpike-lane",
+      "name": "Turnpike Lane",
+      "lat": 51.5904,
+      "lng": -0.1028,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.4,
+        "cycling": 122.7,
+        "transit": 54.4,
+        "driving": 109.2,
+        "multimodal": 122.1
+      }
+    },
+    {
+      "id": "wood-green",
+      "name": "Wood Green",
+      "lat": 51.5975,
+      "lng": -0.1097,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 121.3,
+        "transit": 48.5,
+        "driving": 150.4,
+        "multimodal": 160
+      }
+    },
+    {
+      "id": "notting-hill-gate",
+      "name": "Notting Hill Gate",
+      "lat": 51.5094,
+      "lng": -0.1967,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.6,
+        "cycling": 106.2,
+        "transit": 40.8,
+        "driving": 113.4,
+        "multimodal": 118
+      }
+    },
+    {
+      "id": "holland-park",
+      "name": "Holland Park",
+      "lat": 51.5075,
+      "lng": -0.206,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 110.3,
+        "transit": 34.6,
+        "driving": 104,
+        "multimodal": 109.4
+      }
+    },
+    {
+      "id": "shepherds-bush",
+      "name": "Shepherd's Bush",
+      "lat": 51.5046,
+      "lng": -0.2187,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.4,
+        "cycling": 110.5,
+        "transit": 69,
+        "driving": 198.7,
+        "multimodal": 205.6
+      }
+    },
+    {
+      "id": "north-acton",
+      "name": "North Acton",
+      "lat": 51.5237,
+      "lng": -0.2597,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.5,
+        "cycling": 131.3,
+        "transit": 46.2,
+        "driving": 264.2,
+        "multimodal": 266.8
+      }
+    },
+    {
+      "id": "bethnal-green",
+      "name": "Bethnal Green",
+      "lat": 51.527,
+      "lng": -0.0549,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.4,
+        "cycling": 106.7,
+        "transit": 61.1,
+        "driving": 88.4,
+        "multimodal": 120.3
+      }
+    },
+    {
+      "id": "mile-end",
+      "name": "Mile End",
+      "lat": 51.5249,
+      "lng": -0.0332,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 105.4,
+        "transit": 79.5,
+        "driving": 138.5,
+        "multimodal": 153.1
+      }
+    },
+    {
+      "id": "stratford",
+      "name": "Stratford",
+      "lat": 51.5416,
+      "lng": -0.0042,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 122.3,
+        "transit": 71.5,
+        "driving": 54.1,
+        "multimodal": 86.7
+      }
+    },
+    {
+      "id": "leyton",
+      "name": "Leyton",
+      "lat": 51.5566,
+      "lng": -0.0053,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.4,
+        "cycling": 126.2,
+        "transit": 48.2,
+        "driving": 76.2,
+        "multimodal": 89.9
+      }
+    },
+    {
+      "id": "leytonstone",
+      "name": "Leytonstone",
+      "lat": 51.5683,
+      "lng": 0.0083,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.5,
+        "cycling": 131.9,
+        "transit": 53.4,
+        "driving": 306.3,
+        "multimodal": 313.4
+      }
+    },
+    {
+      "id": "lancaster-gate",
+      "name": "Lancaster Gate",
+      "lat": 51.5119,
+      "lng": -0.1756,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 110.4,
+        "transit": 53.9,
+        "driving": 89.8,
+        "multimodal": 102.6
+      }
+    },
+    {
+      "id": "queensway",
+      "name": "Queensway",
+      "lat": 51.5107,
+      "lng": -0.1871,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.4,
+        "cycling": 115.1,
+        "transit": 56.9,
+        "driving": 121.3,
+        "multimodal": 134.3
+      }
+    },
+    {
+      "id": "west-ham",
+      "name": "West Ham",
+      "lat": 51.5287,
+      "lng": 0.0056,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 109.3,
+        "transit": 38.4,
+        "driving": 153.8,
+        "multimodal": 158.3
+      }
+    },
+    {
+      "id": "plaistow",
+      "name": "Plaistow",
+      "lat": 51.5313,
+      "lng": 0.0172,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 109.2,
+        "transit": 38.6,
+        "driving": 156.6,
+        "multimodal": 160.6
+      }
+    },
+    {
+      "id": "east-ham",
+      "name": "East Ham",
+      "lat": 51.5394,
+      "lng": 0.0518,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.1,
+        "cycling": 102.4,
+        "transit": 37.2,
+        "driving": 118.9,
+        "multimodal": 121.9
+      }
+    },
+    {
+      "id": "barking",
+      "name": "Barking",
+      "lat": 51.5396,
+      "lng": 0.0809,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 8.1,
+        "cycling": 105.3,
+        "transit": 50,
+        "driving": 209.1,
+        "multimodal": 219.1
+      }
+    },
+    {
+      "id": "fulham-broadway",
+      "name": "Fulham Broadway",
+      "lat": 51.48,
+      "lng": -0.1952,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.4,
+        "cycling": 114.9,
+        "transit": 27,
+        "driving": 110.8,
+        "multimodal": 113
+      }
+    },
+    {
+      "id": "west-brompton",
+      "name": "West Brompton",
+      "lat": 51.4872,
+      "lng": -0.1953,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 112.4,
+        "transit": 25.5,
+        "driving": 169.4,
+        "multimodal": 174.4
+      }
+    },
+    {
+      "id": "wimbledon",
+      "name": "Wimbledon",
+      "lat": 51.4214,
+      "lng": -0.2064,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 140,
+        "transit": 50.9,
+        "driving": 101.7,
+        "multimodal": 114
+      }
+    },
+    {
+      "id": "east-putney",
+      "name": "East Putney",
+      "lat": 51.459,
+      "lng": -0.2112,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 8.5,
+        "cycling": 123.6,
+        "transit": 24.3,
+        "driving": 163.6,
+        "multimodal": 165.9
+      }
+    },
+    {
+      "id": "southfields",
+      "name": "Southfields",
+      "lat": 51.4454,
+      "lng": -0.2066,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 128.9,
+        "transit": 23.5,
+        "driving": 174.4,
+        "multimodal": 177.9
+      }
+    },
+    {
+      "id": "wimbledon-park",
+      "name": "Wimbledon Park",
+      "lat": 51.4343,
+      "lng": -0.1992,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 8.9,
+        "cycling": 127.1,
+        "transit": 18.8,
+        "driving": 93.2,
+        "multimodal": 96.4
+      }
+    },
+    {
+      "id": "canary-wharf",
+      "name": "Canary Wharf",
+      "lat": 51.5055,
+      "lng": -0.0196,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 7.2,
+        "cycling": 104.4,
+        "transit": 79.3,
+        "driving": 261.5,
+        "multimodal": 292.9
+      }
+    },
+    {
+      "id": "canada-water",
+      "name": "Canada Water",
+      "lat": 51.4982,
+      "lng": -0.0502,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 6.6,
+        "cycling": 81.9,
+        "transit": 53.9,
+        "driving": 94.2,
+        "multimodal": 107.5
+      }
+    },
+    {
+      "id": "bermondsey",
+      "name": "Bermondsey",
+      "lat": 51.4979,
+      "lng": -0.0637,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 8.1,
+        "cycling": 95.3,
+        "transit": 38.2,
+        "driving": 99,
+        "multimodal": 110.3
+      }
+    },
+    {
+      "id": "southwark",
+      "name": "Southwark",
+      "lat": 51.504,
+      "lng": -0.105,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.4,
+        "cycling": 108.8,
+        "transit": 49.2,
+        "driving": 41.4,
+        "multimodal": 57.6
+      }
+    },
+    {
+      "id": "north-greenwich",
+      "name": "North Greenwich",
+      "lat": 51.5005,
+      "lng": 0.0039,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 2.6,
+        "cycling": 57.5,
+        "transit": 43.3,
+        "driving": 68.2,
+        "multimodal": 90.8
+      }
+    },
+    {
+      "id": "west-hampstead",
+      "name": "West Hampstead",
+      "lat": 51.5469,
+      "lng": -0.191,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.5,
+        "cycling": 126.6,
+        "transit": 61.4,
+        "driving": 164,
+        "multimodal": 170.6
+      }
+    },
+    {
+      "id": "st-johns-wood",
+      "name": "St John's Wood",
+      "lat": 51.5347,
+      "lng": -0.174,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 115.5,
+        "transit": 59.4,
+        "driving": 108,
+        "multimodal": 129
+      }
+    },
+    {
+      "id": "baker-street",
+      "name": "Baker Street",
+      "lat": 51.5226,
+      "lng": -0.1571,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.8,
+        "cycling": 111.5,
+        "transit": 75.3,
+        "driving": 98,
+        "multimodal": 106.6
+      }
+    },
+    {
+      "id": "queens-park",
+      "name": "Queen's Park",
+      "lat": 51.5341,
+      "lng": -0.2047,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 117.7,
+        "transit": 28.8,
+        "driving": 107.9,
+        "multimodal": 110.5
+      }
+    },
+    {
+      "id": "kensal-green",
+      "name": "Kensal Green",
+      "lat": 51.5304,
+      "lng": -0.2249,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.3,
+        "cycling": 117.8,
+        "transit": 26.8,
+        "driving": 88.6,
+        "multimodal": 90.1
+      }
+    },
+    {
+      "id": "willesden-junction",
+      "name": "Willesden Junction",
+      "lat": 51.5326,
+      "lng": -0.2444,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.6,
+        "cycling": 127.1,
+        "transit": 36.4,
+        "driving": 142.9,
+        "multimodal": 147.5
+      }
+    },
+    {
+      "id": "harlesden",
+      "name": "Harlesden",
+      "lat": 51.5362,
+      "lng": -0.2575,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.8,
+        "cycling": 131.3,
+        "transit": 34.2,
+        "driving": 217,
+        "multimodal": 218.5
+      }
+    },
+    {
+      "id": "stonebridge-park",
+      "name": "Stonebridge Park",
+      "lat": 51.544,
+      "lng": -0.2759,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 133.2,
+        "transit": 43.5,
+        "driving": 450.7,
+        "multimodal": 458.5
+      }
+    },
+    {
+      "id": "wembley-central",
+      "name": "Wembley Central",
+      "lat": 51.5522,
+      "lng": -0.2963,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.1,
+        "cycling": 132.1,
+        "transit": 42.5,
+        "driving": 187.6,
+        "multimodal": 193.2
+      }
+    },
+    {
+      "id": "maida-vale",
+      "name": "Maida Vale",
+      "lat": 51.5298,
+      "lng": -0.1854,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 113.3,
+        "transit": 29.7,
+        "driving": 111.7,
+        "multimodal": 117.4
+      }
+    },
+    {
+      "id": "warwick-avenue",
+      "name": "Warwick Avenue",
+      "lat": 51.5235,
+      "lng": -0.1835,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.8,
+        "cycling": 117.3,
+        "transit": 43.8,
+        "driving": 115.9,
+        "multimodal": 125.1
+      }
+    },
+    {
+      "id": "edgware-road-bakerloo",
+      "name": "Edgware Road",
+      "lat": 51.5199,
+      "lng": -0.1679,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.8,
+        "cycling": 112.4,
+        "transit": 38.2,
+        "driving": 152,
+        "multimodal": 155.9
+      }
+    },
+    {
+      "id": "lambeth-north",
+      "name": "Lambeth North",
+      "lat": 51.4986,
+      "lng": -0.1115,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 108.2,
+        "transit": 43.3,
+        "driving": 48.9,
+        "multimodal": 57.1
+      }
+    },
+    {
+      "id": "hackney-central",
+      "name": "Hackney Central",
+      "lat": 51.5468,
+      "lng": -0.0566,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 113.3,
+        "transit": 37.5,
+        "driving": 103.9,
+        "multimodal": 113.6
+      }
+    },
+    {
+      "id": "hackney-downs",
+      "name": "Hackney Downs",
+      "lat": 51.5488,
+      "lng": -0.0603,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 112.1,
+        "transit": 40.1,
+        "driving": 110.2,
+        "multimodal": 119.9
+      }
+    },
+    {
+      "id": "homerton",
+      "name": "Homerton",
+      "lat": 51.5468,
+      "lng": -0.0394,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 9.9,
+        "cycling": 112.1,
+        "transit": 20,
+        "driving": 370.5,
+        "multimodal": 373.5
+      }
+    },
+    {
+      "id": "whitechapel",
+      "name": "Whitechapel",
+      "lat": 51.5194,
+      "lng": -0.0612,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 100.5,
+        "transit": 115.3,
+        "driving": 84.4,
+        "multimodal": 139.8
+      }
+    },
+    {
+      "id": "shadwell",
+      "name": "Shadwell",
+      "lat": 51.5117,
+      "lng": -0.0566,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 8.1,
+        "cycling": 105.8,
+        "transit": 73.1,
+        "driving": 133.3,
+        "multimodal": 159.3
+      }
+    },
+    {
+      "id": "wapping",
+      "name": "Wapping",
+      "lat": 51.5043,
+      "lng": -0.0559,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 4.8,
+        "cycling": 93.6,
+        "transit": 47.6,
+        "driving": 171.3,
+        "multimodal": 187.1
+      }
+    },
+    {
+      "id": "rotherhithe",
+      "name": "Rotherhithe",
+      "lat": 51.501,
+      "lng": -0.0525,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 6.9,
+        "cycling": 82.5,
+        "transit": 54.6,
+        "driving": 143.4,
+        "multimodal": 158.6
+      }
+    },
+    {
+      "id": "surrey-quays",
+      "name": "Surrey Quays",
+      "lat": 51.4933,
+      "lng": -0.0478,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 8.2,
+        "cycling": 90.1,
+        "transit": 36.3,
+        "driving": 67.7,
+        "multimodal": 73.8
+      }
+    },
+    {
+      "id": "new-cross",
+      "name": "New Cross",
+      "lat": 51.4767,
+      "lng": -0.0325,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 9,
+        "cycling": 102.7,
+        "transit": 41.9,
+        "driving": 90.1,
+        "multimodal": 99.9
+      }
+    },
+    {
+      "id": "new-cross-gate",
+      "name": "New Cross Gate",
+      "lat": 51.4753,
+      "lng": -0.0404,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 102.7,
+        "transit": 49.9,
+        "driving": 84.4,
+        "multimodal": 88.5
+      }
+    },
+    {
+      "id": "peckham-rye",
+      "name": "Peckham Rye",
+      "lat": 51.47,
+      "lng": -0.0693,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 11.4,
+        "cycling": 106,
+        "transit": 33.7,
+        "driving": 65.3,
+        "multimodal": 68.5
+      }
+    },
+    {
+      "id": "denmark-hill",
+      "name": "Denmark Hill",
+      "lat": 51.4684,
+      "lng": -0.0889,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 106.2,
+        "transit": 27.5,
+        "driving": 74.1,
+        "multimodal": 75.8
+      }
+    },
+    {
+      "id": "forest-hill",
+      "name": "Forest Hill",
+      "lat": 51.4393,
+      "lng": -0.0536,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 11.6,
+        "cycling": 125.3,
+        "transit": 33.6,
+        "driving": 131.6,
+        "multimodal": 132.8
+      }
+    },
+    {
+      "id": "brockley",
+      "name": "Brockley",
+      "lat": 51.4642,
+      "lng": -0.0371,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 110.3,
+        "transit": 39.3,
+        "driving": 91.9,
+        "multimodal": 95.5
+      }
+    },
+    {
+      "id": "honor-oak-park",
+      "name": "Honor Oak Park",
+      "lat": 51.45,
+      "lng": -0.0453,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 117.7,
+        "transit": 37.4,
+        "driving": 111.8,
+        "multimodal": 115.7
+      }
+    },
+    {
+      "id": "greenwich",
+      "name": "Greenwich",
+      "lat": 51.4781,
+      "lng": -0.0149,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 9.5,
+        "cycling": 109.3,
+        "transit": 36.3,
+        "driving": 64.2,
+        "multimodal": 76.7
+      }
+    },
+    {
+      "id": "deptford-bridge",
+      "name": "Deptford Bridge",
+      "lat": 51.474,
+      "lng": -0.0219,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 112.6,
+        "transit": 42,
+        "driving": 126.7,
+        "multimodal": 132.1
+      }
+    },
+    {
+      "id": "lewisham",
+      "name": "Lewisham",
+      "lat": 51.4657,
+      "lng": -0.0142,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 109.2,
+        "transit": 59.4,
+        "driving": 80,
+        "multimodal": 95.8
+      }
+    },
+    {
+      "id": "cutty-sark",
+      "name": "Cutty Sark",
+      "lat": 51.4827,
+      "lng": -0.0101,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 116.3,
+        "transit": 30.9,
+        "driving": 80.2,
+        "multimodal": 86.1
+      }
+    },
+    {
+      "id": "island-gardens",
+      "name": "Island Gardens",
+      "lat": 51.4871,
+      "lng": -0.0095,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 7.8,
+        "cycling": 114,
+        "transit": 19.8,
+        "driving": 97.6,
+        "multimodal": 108.5
+      }
+    },
+    {
+      "id": "limehouse",
+      "name": "Limehouse",
+      "lat": 51.5123,
+      "lng": -0.0396,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 9.4,
+        "cycling": 106,
+        "transit": 51.4,
+        "driving": 264.5,
+        "multimodal": 272.7
+      }
+    },
+    {
+      "id": "bow-church",
+      "name": "Bow Church",
+      "lat": 51.5269,
+      "lng": -0.0208,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 9.8,
+        "cycling": 102.9,
+        "transit": 34.3,
+        "driving": 302.1,
+        "multimodal": 305.6
+      }
+    },
+    {
+      "id": "tulse-hill",
+      "name": "Tulse Hill",
+      "lat": 51.4398,
+      "lng": -0.1038,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 117.9,
+        "transit": 29.3,
+        "driving": 87.1,
+        "multimodal": 90
+      }
+    },
+    {
+      "id": "streatham",
+      "name": "Streatham",
+      "lat": 51.4254,
+      "lng": -0.131,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 125.8,
+        "transit": 32.7,
+        "driving": 105.4,
+        "multimodal": 107
+      }
+    },
+    {
+      "id": "norwood-junction",
+      "name": "Norwood Junction",
+      "lat": 51.397,
+      "lng": -0.075,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 11.1,
+        "cycling": 130.5,
+        "transit": 40.7,
+        "driving": 160.7,
+        "multimodal": 164.8
+      }
+    },
+    {
+      "id": "east-dulwich",
+      "name": "East Dulwich",
+      "lat": 51.4614,
+      "lng": -0.0817,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 8.8,
+        "cycling": 99.5,
+        "transit": 14.3,
+        "driving": 60.4,
+        "multimodal": 60.5
+      }
+    },
+    {
+      "id": "south-bermondsey",
+      "name": "South Bermondsey",
+      "lat": 51.4877,
+      "lng": -0.0534,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 9.4,
+        "cycling": 91.4,
+        "transit": 11.5,
+        "driving": 61.3,
+        "multimodal": 62.4
+      }
+    },
+    {
+      "id": "catford",
+      "name": "Catford",
+      "lat": 51.4445,
+      "lng": -0.0251,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 12.1,
+        "cycling": 121.2,
+        "transit": 54.1,
+        "driving": 117.5,
+        "multimodal": 123.3
+      }
+    },
+    {
+      "id": "sydenham",
+      "name": "Sydenham",
+      "lat": 51.4272,
+      "lng": -0.0548,
+      "type": "rail_station",
+      "coverage": {
+        "walking": 10,
+        "cycling": 121.9,
+        "transit": 33.4,
+        "driving": 119.5,
+        "multimodal": 121.4
+      }
+    },
+    {
+      "id": "chiswick-park",
+      "name": "Chiswick Park",
+      "lat": 51.4946,
+      "lng": -0.2678,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10,
+        "cycling": 119.8,
+        "transit": 24.1,
+        "driving": 261.3,
+        "multimodal": 267.6
+      }
+    },
+    {
+      "id": "gunnersbury",
+      "name": "Gunnersbury",
+      "lat": 51.4915,
+      "lng": -0.2752,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.9,
+        "cycling": 124.8,
+        "transit": 30.4,
+        "driving": 275.9,
+        "multimodal": 282.8
+      }
+    },
+    {
+      "id": "kew-gardens",
+      "name": "Kew Gardens",
+      "lat": 51.477,
+      "lng": -0.2854,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 8.2,
+        "cycling": 132.7,
+        "transit": 22.4,
+        "driving": 270.5,
+        "multimodal": 275.1
+      }
+    },
+    {
+      "id": "richmond",
+      "name": "Richmond",
+      "lat": 51.4631,
+      "lng": -0.3013,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.1,
+        "cycling": 141,
+        "transit": 46,
+        "driving": 166.5,
+        "multimodal": 173.2
+      }
+    },
+    {
+      "id": "golders-green",
+      "name": "Golders Green",
+      "lat": 51.5724,
+      "lng": -0.1941,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 131.2,
+        "transit": 50.9,
+        "driving": 312,
+        "multimodal": 317.1
+      }
+    },
+    {
+      "id": "colindale",
+      "name": "Colindale",
+      "lat": 51.5955,
+      "lng": -0.2498,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 9.9,
+        "cycling": 118.1,
+        "transit": 41.2,
+        "driving": 303.4,
+        "multimodal": 305.9
+      }
+    },
+    {
+      "id": "edgware",
+      "name": "Edgware",
+      "lat": 51.6137,
+      "lng": -0.275,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 4.2,
+        "cycling": 105.3,
+        "transit": 38.9,
+        "driving": 443.2,
+        "multimodal": 448.7
+      }
+    },
+    {
+      "id": "belsize-park",
+      "name": "Belsize Park",
+      "lat": 51.5504,
+      "lng": -0.1642,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 123.4,
+        "transit": 32.9,
+        "driving": 115.9,
+        "multimodal": 124.5
+      }
+    },
+    {
+      "id": "hampstead",
+      "name": "Hampstead",
+      "lat": 51.5568,
+      "lng": -0.178,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.8,
+        "cycling": 135.7,
+        "transit": 32.5,
+        "driving": 178,
+        "multimodal": 183.6
+      }
+    },
+    {
+      "id": "harrow-on-the-hill",
+      "name": "Harrow-on-the-Hill",
+      "lat": 51.5793,
+      "lng": -0.337,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.8,
+        "cycling": 136.6,
+        "transit": 46.3,
+        "driving": 112,
+        "multimodal": 116.2
+      }
+    },
+    {
+      "id": "northwick-park",
+      "name": "Northwick Park",
+      "lat": 51.5784,
+      "lng": -0.3184,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 130.6,
+        "transit": 50.7,
+        "driving": 135.4,
+        "multimodal": 144.1
+      }
+    },
+    {
+      "id": "wembley-park",
+      "name": "Wembley Park",
+      "lat": 51.5635,
+      "lng": -0.2795,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11,
+        "cycling": 132.7,
+        "transit": 42.7,
+        "driving": 231.2,
+        "multimodal": 234.1
+      }
+    },
+    {
+      "id": "neasden",
+      "name": "Neasden",
+      "lat": 51.5543,
+      "lng": -0.2503,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 11.1,
+        "cycling": 136,
+        "transit": 35.6,
+        "driving": 421.5,
+        "multimodal": 424.4
+      }
+    },
+    {
+      "id": "dollis-hill",
+      "name": "Dollis Hill",
+      "lat": 51.552,
+      "lng": -0.2387,
+      "type": "tube_station",
+      "coverage": {
+        "walking": 10.4,
+        "cycling": 123,
+        "transit": 38.4,
+        "driving": 290.6,
+        "multimodal": 294.8
+      }
+    },
+    {
+      "id": "grid-51.450--0.300",
+      "name": "Ham, Petersham & Richmond Riverside",
+      "lat": 51.45,
+      "lng": -0.3,
+      "type": "grid",
+      "coverage": {
+        "walking": 11.7,
+        "cycling": 138,
+        "transit": 16.3,
+        "driving": 162.8,
+        "multimodal": 165.5
+      }
+    },
+    {
+      "id": "grid-51.450--0.160",
+      "name": "Balham",
+      "lat": 51.45,
+      "lng": -0.16,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.8,
+        "cycling": 119.6,
+        "transit": 15.2,
+        "driving": 84.5,
+        "multimodal": 86.2
+      }
+    },
+    {
+      "id": "grid-51.450--0.132",
+      "name": "Clapham Park",
+      "lat": 51.45,
+      "lng": -0.132,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 116.5,
+        "transit": 20,
+        "driving": 74.1,
+        "multimodal": 74.7
+      }
+    },
+    {
+      "id": "grid-51.450--0.104",
+      "name": "Grid 51.450, -0.104",
+      "lat": 51.45,
+      "lng": -0.104,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 111.6,
+        "transit": 18.8,
+        "driving": 65.7,
+        "multimodal": 67.2
+      }
+    },
+    {
+      "id": "grid-51.450--0.076",
+      "name": "Dulwich Village",
+      "lat": 51.45,
+      "lng": -0.076,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 113.1,
+        "transit": 24,
+        "driving": 95.1,
+        "multimodal": 95.6
+      }
+    },
+    {
+      "id": "grid-51.450--0.020",
+      "name": "Rushey Green",
+      "lat": 51.45,
+      "lng": -0.02,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.4,
+        "cycling": 115.4,
+        "transit": 22.5,
+        "driving": 145,
+        "multimodal": 146.6
+      }
+    },
+    {
+      "id": "grid-51.450-0.008",
+      "name": "Lee Green",
+      "lat": 51.45,
+      "lng": 0.008,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.8,
+        "cycling": 111.5,
+        "transit": 15.2,
+        "driving": 197.2,
+        "multimodal": 199
+      }
+    },
+    {
+      "id": "grid-51.450-0.036",
+      "name": "Middle Park & Horn Park",
+      "lat": 51.45,
+      "lng": 0.036,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 121.4,
+        "transit": 19.6,
+        "driving": 351.7,
+        "multimodal": 354.8
+      }
+    },
+    {
+      "id": "grid-51.450-0.064",
+      "name": "Eltham Town & Avery Hill",
+      "lat": 51.45,
+      "lng": 0.064,
+      "type": "grid",
+      "coverage": {
+        "walking": 11.2,
+        "cycling": 143.2,
+        "transit": 26,
+        "driving": 276.9,
+        "multimodal": 281.3
+      }
+    },
+    {
+      "id": "grid-51.450-0.092",
+      "name": "Blackfen & Lamorbey",
+      "lat": 51.45,
+      "lng": 0.092,
+      "type": "grid",
+      "coverage": {
+        "walking": 8.2,
+        "cycling": 131.6,
+        "transit": 8.9,
+        "driving": 366.5,
+        "multimodal": 370.8
+      }
+    },
+    {
+      "id": "grid-51.468--0.300",
+      "name": "North Richmond",
+      "lat": 51.468,
+      "lng": -0.3,
+      "type": "grid",
+      "coverage": {
+        "walking": 8.6,
+        "cycling": 134.6,
+        "transit": 18,
+        "driving": 196.8,
+        "multimodal": 200.2
+      }
+    },
+    {
+      "id": "grid-51.468--0.272",
+      "name": "Mortlake & Barnes Common",
+      "lat": 51.468,
+      "lng": -0.272,
+      "type": "grid",
+      "coverage": {
+        "walking": 11.3,
+        "cycling": 137.9,
+        "transit": 14.1,
+        "driving": 238.2,
+        "multimodal": 241.8
+      }
+    },
+    {
+      "id": "grid-51.468--0.244",
+      "name": "Grid 51.468, -0.244",
+      "lat": 51.468,
+      "lng": -0.244,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.9,
+        "cycling": 128.4,
+        "transit": 18.9,
+        "driving": 149.4,
+        "multimodal": 153.9
+      }
+    },
+    {
+      "id": "grid-51.468--0.104",
+      "name": "Brixton North",
+      "lat": 51.468,
+      "lng": -0.104,
+      "type": "grid",
+      "coverage": {
+        "walking": 10,
+        "cycling": 105.7,
+        "transit": 19.3,
+        "driving": 66,
+        "multimodal": 66.4
+      }
+    },
+    {
+      "id": "grid-51.468--0.076",
+      "name": "Rye Lane",
+      "lat": 51.468,
+      "lng": -0.076,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 102.8,
+        "transit": 20.9,
+        "driving": 74.8,
+        "multimodal": 75.8
+      }
+    },
+    {
+      "id": "grid-51.468--0.048",
+      "name": "Telegraph Hill",
+      "lat": 51.468,
+      "lng": -0.048,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 102.7,
+        "transit": 22.2,
+        "driving": 88.1,
+        "multimodal": 89.5
+      }
+    },
+    {
+      "id": "grid-51.468-0.008",
+      "name": "Blackheath",
+      "lat": 51.468,
+      "lng": 0.008,
+      "type": "grid",
+      "coverage": {
+        "walking": 11.7,
+        "cycling": 115.5,
+        "transit": 33.4,
+        "driving": 200.9,
+        "multimodal": 203.9
+      }
+    },
+    {
+      "id": "grid-51.468-0.036",
+      "name": "Kidbrooke Park",
+      "lat": 51.468,
+      "lng": 0.036,
+      "type": "grid",
+      "coverage": {
+        "walking": 8.9,
+        "cycling": 106.8,
+        "transit": 13.3,
+        "driving": 192.1,
+        "multimodal": 194.5
+      }
+    },
+    {
+      "id": "grid-51.468-0.064",
+      "name": "Shooters Hill",
+      "lat": 51.468,
+      "lng": 0.064,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 134.8,
+        "transit": 22.4,
+        "driving": 150.5,
+        "multimodal": 152.2
+      }
+    },
+    {
+      "id": "grid-51.468-0.092",
+      "name": "East Wickham",
+      "lat": 51.468,
+      "lng": 0.092,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.3,
+        "cycling": 119.3,
+        "transit": 15.2,
+        "driving": 143.1,
+        "multimodal": 146.5
+      }
+    },
+    {
+      "id": "grid-51.486--0.300",
+      "name": "Brentford West",
+      "lat": 51.486,
+      "lng": -0.3,
+      "type": "grid",
+      "coverage": {
+        "walking": 9,
+        "cycling": 134.4,
+        "transit": 24.2,
+        "driving": 206.7,
+        "multimodal": 209.8
+      }
+    },
+    {
+      "id": "grid-51.486--0.272",
+      "name": "Chiswick Riverside",
+      "lat": 51.486,
+      "lng": -0.272,
+      "type": "grid",
+      "coverage": {
+        "walking": 8.2,
+        "cycling": 127,
+        "transit": 12.9,
+        "driving": 364.9,
+        "multimodal": 370.2
+      }
+    },
+    {
+      "id": "grid-51.486--0.244",
+      "name": "Grid 51.486, -0.244",
+      "lat": 51.486,
+      "lng": -0.244,
+      "type": "grid",
+      "coverage": {
+        "walking": 5,
+        "cycling": 112.8,
+        "transit": 6.7,
+        "driving": 94.5,
+        "multimodal": 95.9
+      }
+    },
+    {
+      "id": "grid-51.486-0.064",
+      "name": "Woolwich Common",
+      "lat": 51.486,
+      "lng": 0.064,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.6,
+        "cycling": 112,
+        "transit": 43.4,
+        "driving": 132.5,
+        "multimodal": 139.1
+      }
+    },
+    {
+      "id": "grid-51.486-0.092",
+      "name": "Plumstead & Glyndon",
+      "lat": 51.486,
+      "lng": 0.092,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 93.9,
+        "transit": 19.6,
+        "driving": 97.2,
+        "multimodal": 98.8
+      }
+    },
+    {
+      "id": "grid-51.504--0.300",
+      "name": "Ealing Common",
+      "lat": 51.504,
+      "lng": -0.3,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.4,
+        "cycling": 125.1,
+        "transit": 11.6,
+        "driving": 252.6,
+        "multimodal": 255.7
+      }
+    },
+    {
+      "id": "grid-51.504--0.272",
+      "name": "South Acton",
+      "lat": 51.504,
+      "lng": -0.272,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.4,
+        "cycling": 119.4,
+        "transit": 13.2,
+        "driving": 241.2,
+        "multimodal": 243.6
+      }
+    },
+    {
+      "id": "grid-51.504--0.244",
+      "name": "Wendell Park",
+      "lat": 51.504,
+      "lng": -0.244,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 120,
+        "transit": 20.2,
+        "driving": 248,
+        "multimodal": 251.5
+      }
+    },
+    {
+      "id": "grid-51.504--0.188",
+      "name": "Grid 51.504, -0.188",
+      "lat": 51.504,
+      "lng": -0.188,
+      "type": "grid",
+      "coverage": {
+        "walking": 11.8,
+        "cycling": 116.8,
+        "transit": 23.7,
+        "driving": 114.2,
+        "multimodal": 116.1
+      }
+    },
+    {
+      "id": "grid-51.504--0.132",
+      "name": "Grid 51.504, -0.132",
+      "lat": 51.504,
+      "lng": -0.132,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 112.8,
+        "transit": 20.6,
+        "driving": 37,
+        "multimodal": 38.5
+      }
+    },
+    {
+      "id": "grid-51.504--0.076",
+      "name": "North Bermondsey",
+      "lat": 51.504,
+      "lng": -0.076,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 106.3,
+        "transit": 22.4,
+        "driving": 55.4,
+        "multimodal": 58.8
+      }
+    },
+    {
+      "id": "grid-51.504-0.036",
+      "name": "Royal Victoria",
+      "lat": 51.504,
+      "lng": 0.036,
+      "type": "grid",
+      "coverage": {
+        "walking": 5.9,
+        "cycling": 91,
+        "transit": 26.6,
+        "driving": 191.8,
+        "multimodal": 200.3
+      }
+    },
+    {
+      "id": "grid-51.504-0.064",
+      "name": "Grid 51.504, 0.064",
+      "lat": 51.504,
+      "lng": 0.064,
+      "type": "grid",
+      "coverage": {
+        "walking": 0.5,
+        "cycling": 47.1,
+        "transit": 0.2,
+        "driving": 0.4,
+        "multimodal": 0.4
+      }
+    },
+    {
+      "id": "grid-51.504-0.092",
+      "name": "Grid 51.504, 0.092",
+      "lat": 51.504,
+      "lng": 0.092,
+      "type": "grid",
+      "coverage": {
+        "walking": 4.7,
+        "cycling": 72,
+        "transit": 9,
+        "driving": 45,
+        "multimodal": 45.4
+      }
+    },
+    {
+      "id": "grid-51.522--0.300",
+      "name": "Ealing Broadway",
+      "lat": 51.522,
+      "lng": -0.3,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.5,
+        "cycling": 139,
+        "transit": 14.5,
+        "driving": 437.9,
+        "multimodal": 441.9
+      }
+    },
+    {
+      "id": "grid-51.522--0.216",
+      "name": "Dalgarno",
+      "lat": 51.522,
+      "lng": -0.216,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.5,
+        "cycling": 119.5,
+        "transit": 16.7,
+        "driving": 100.2,
+        "multimodal": 101.3
+      }
+    },
+    {
+      "id": "grid-51.522--0.048",
+      "name": "Bethnal Green East",
+      "lat": 51.522,
+      "lng": -0.048,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 102.3,
+        "transit": 31.3,
+        "driving": 133.7,
+        "multimodal": 142.8
+      }
+    },
+    {
+      "id": "grid-51.522--0.020",
+      "name": "Bromley South",
+      "lat": 51.522,
+      "lng": -0.02,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.4,
+        "cycling": 102.1,
+        "transit": 26.4,
+        "driving": 210,
+        "multimodal": 213.4
+      }
+    },
+    {
+      "id": "grid-51.522-0.008",
+      "name": "Canning Town North",
+      "lat": 51.522,
+      "lng": 0.008,
+      "type": "grid",
+      "coverage": {
+        "walking": 8.2,
+        "cycling": 97.7,
+        "transit": 20.7,
+        "driving": 234.6,
+        "multimodal": 237.9
+      }
+    },
+    {
+      "id": "grid-51.522-0.036",
+      "name": "Grid 51.522, 0.036",
+      "lat": 51.522,
+      "lng": 0.036,
+      "type": "grid",
+      "coverage": {
+        "walking": 8.9,
+        "cycling": 95.5,
+        "transit": 17.5,
+        "driving": 245.3,
+        "multimodal": 249.9
+      }
+    },
+    {
+      "id": "grid-51.522-0.064",
+      "name": "East Ham South",
+      "lat": 51.522,
+      "lng": 0.064,
+      "type": "grid",
+      "coverage": {
+        "walking": 9,
+        "cycling": 87,
+        "transit": 19,
+        "driving": 656.3,
+        "multimodal": 660.8
+      }
+    },
+    {
+      "id": "grid-51.522-0.092",
+      "name": "Grid 51.522, 0.092",
+      "lat": 51.522,
+      "lng": 0.092,
+      "type": "grid",
+      "coverage": {
+        "walking": 2.5,
+        "cycling": 75.7,
+        "transit": 0.3,
+        "driving": 246.3,
+        "multimodal": 250
+      }
+    },
+    {
+      "id": "grid-51.540--0.300",
+      "name": "Alperton",
+      "lat": 51.54,
+      "lng": -0.3,
+      "type": "grid",
+      "coverage": {
+        "walking": 8.9,
+        "cycling": 130.3,
+        "transit": 26.4,
+        "driving": 326.2,
+        "multimodal": 327.7
+      }
+    },
+    {
+      "id": "grid-51.540--0.272",
+      "name": "Grid 51.540, -0.272",
+      "lat": 51.54,
+      "lng": -0.272,
+      "type": "grid",
+      "coverage": {
+        "walking": 6.5,
+        "cycling": 124.4,
+        "transit": 11.5,
+        "driving": 395.3,
+        "multimodal": 397.7
+      }
+    },
+    {
+      "id": "grid-51.540--0.244",
+      "name": "Harlesden & Kensal Green",
+      "lat": 51.54,
+      "lng": -0.244,
+      "type": "grid",
+      "coverage": {
+        "walking": 8.8,
+        "cycling": 118.5,
+        "transit": 13.3,
+        "driving": 178.7,
+        "multimodal": 179.4
+      }
+    },
+    {
+      "id": "grid-51.540--0.216",
+      "name": "Brondesbury Park",
+      "lat": 51.54,
+      "lng": -0.216,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.7,
+        "cycling": 119.2,
+        "transit": 15.5,
+        "driving": 120.1,
+        "multimodal": 121.7
+      }
+    },
+    {
+      "id": "grid-51.540--0.188",
+      "name": "Kilburn",
+      "lat": 51.54,
+      "lng": -0.188,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 114.4,
+        "transit": 27.2,
+        "driving": 106.7,
+        "multimodal": 107.7
+      }
+    },
+    {
+      "id": "grid-51.540--0.104",
+      "name": "St Mary's & St James'",
+      "lat": 51.54,
+      "lng": -0.104,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.6,
+        "cycling": 113.4,
+        "transit": 23.3,
+        "driving": 50.7,
+        "multimodal": 51.7
+      }
+    },
+    {
+      "id": "grid-51.540--0.076",
+      "name": "London Fields",
+      "lat": 51.54,
+      "lng": -0.076,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 112.1,
+        "transit": 29.5,
+        "driving": 49.1,
+        "multimodal": 50.1
+      }
+    },
+    {
+      "id": "grid-51.540--0.048",
+      "name": "Victoria",
+      "lat": 51.54,
+      "lng": -0.048,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 110.4,
+        "transit": 18.6,
+        "driving": 193.1,
+        "multimodal": 195.2
+      }
+    },
+    {
+      "id": "grid-51.540--0.020",
+      "name": "Bow East",
+      "lat": 51.54,
+      "lng": -0.02,
+      "type": "grid",
+      "coverage": {
+        "walking": 11.1,
+        "cycling": 122.3,
+        "transit": 17.8,
+        "driving": 131.8,
+        "multimodal": 134.4
+      }
+    },
+    {
+      "id": "grid-51.540-0.008",
+      "name": "West Ham",
+      "lat": 51.54,
+      "lng": 0.008,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 115.6,
+        "transit": 21.5,
+        "driving": 60,
+        "multimodal": 62.4
+      }
+    },
+    {
+      "id": "grid-51.540-0.036",
+      "name": "Green Street East",
+      "lat": 51.54,
+      "lng": 0.036,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 105,
+        "transit": 12.5,
+        "driving": 82.3,
+        "multimodal": 84.4
+      }
+    },
+    {
+      "id": "grid-51.558--0.020",
+      "name": "Grid 51.558, -0.020",
+      "lat": 51.558,
+      "lng": -0.02,
+      "type": "grid",
+      "coverage": {
+        "walking": 3.6,
+        "cycling": 94.4,
+        "transit": 0.2,
+        "driving": 103.8,
+        "multimodal": 105.8
+      }
+    },
+    {
+      "id": "grid-51.558-0.008",
+      "name": "Cann Hall",
+      "lat": 51.558,
+      "lng": 0.008,
+      "type": "grid",
+      "coverage": {
+        "walking": 11,
+        "cycling": 132.3,
+        "transit": 28.8,
+        "driving": 147.9,
+        "multimodal": 151.6
+      }
+    },
+    {
+      "id": "grid-51.558-0.036",
+      "name": "Grid 51.558, 0.036",
+      "lat": 51.558,
+      "lng": 0.036,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.8,
+        "cycling": 119.5,
+        "transit": 13,
+        "driving": 125.6,
+        "multimodal": 128.5
+      }
+    },
+    {
+      "id": "grid-51.558-0.064",
+      "name": "Valentines",
+      "lat": 51.558,
+      "lng": 0.064,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.4,
+        "cycling": 120.4,
+        "transit": 29.1,
+        "driving": 481.8,
+        "multimodal": 485.6
+      }
+    },
+    {
+      "id": "grid-51.558-0.092",
+      "name": "Mayfield",
+      "lat": 51.558,
+      "lng": 0.092,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 117.6,
+        "transit": 22,
+        "driving": 232.6,
+        "multimodal": 234.3
+      }
+    },
+    {
+      "id": "grid-51.576--0.300",
+      "name": "Grid 51.576, -0.300",
+      "lat": 51.576,
+      "lng": -0.3,
+      "type": "grid",
+      "coverage": {
+        "walking": 11,
+        "cycling": 126.9,
+        "transit": 23.8,
+        "driving": 155.2,
+        "multimodal": 157.5
+      }
+    },
+    {
+      "id": "grid-51.576--0.272",
+      "name": "Grid 51.576, -0.272",
+      "lat": 51.576,
+      "lng": -0.272,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 123.9,
+        "transit": 7.9,
+        "driving": 162,
+        "multimodal": 163.5
+      }
+    },
+    {
+      "id": "grid-51.576--0.244",
+      "name": "Grid 51.576, -0.244",
+      "lat": 51.576,
+      "lng": -0.244,
+      "type": "grid",
+      "coverage": {
+        "walking": 8.8,
+        "cycling": 116.6,
+        "transit": 22.4,
+        "driving": 324.9,
+        "multimodal": 326.9
+      }
+    },
+    {
+      "id": "grid-51.576--0.188",
+      "name": "Grid 51.576, -0.188",
+      "lat": 51.576,
+      "lng": -0.188,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.5,
+        "cycling": 133.2,
+        "transit": 15.7,
+        "driving": 271.6,
+        "multimodal": 273.6
+      }
+    },
+    {
+      "id": "grid-51.576--0.160",
+      "name": "Highgate",
+      "lat": 51.576,
+      "lng": -0.16,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.5,
+        "cycling": 123.9,
+        "transit": 12.9,
+        "driving": 135.1,
+        "multimodal": 135.8
+      }
+    },
+    {
+      "id": "grid-51.576--0.132",
+      "name": "Crouch End",
+      "lat": 51.576,
+      "lng": -0.132,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.2,
+        "cycling": 120,
+        "transit": 19.5,
+        "driving": 109.8,
+        "multimodal": 110.5
+      }
+    },
+    {
+      "id": "grid-51.576--0.104",
+      "name": "Harringay",
+      "lat": 51.576,
+      "lng": -0.104,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.7,
+        "cycling": 120.2,
+        "transit": 23.5,
+        "driving": 90.8,
+        "multimodal": 92
+      }
+    },
+    {
+      "id": "grid-51.576--0.020",
+      "name": "Markhouse",
+      "lat": 51.576,
+      "lng": -0.02,
+      "type": "grid",
+      "coverage": {
+        "walking": 9.6,
+        "cycling": 116.7,
+        "transit": 18,
+        "driving": 102.9,
+        "multimodal": 102.6
+      }
+    },
+    {
+      "id": "grid-51.576-0.008",
+      "name": "Forest",
+      "lat": 51.576,
+      "lng": 0.008,
+      "type": "grid",
+      "coverage": {
+        "walking": 11.2,
+        "cycling": 135.6,
+        "transit": 17.2,
+        "driving": 261.7,
+        "multimodal": 265
+      }
+    },
+    {
+      "id": "grid-51.576-0.036",
+      "name": "Wanstead Park",
+      "lat": 51.576,
+      "lng": 0.036,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.9,
+        "cycling": 131.5,
+        "transit": 30.4,
+        "driving": 528.4,
+        "multimodal": 534.9
+      }
+    },
+    {
+      "id": "grid-51.576-0.064",
+      "name": "Cranbrook",
+      "lat": 51.576,
+      "lng": 0.064,
+      "type": "grid",
+      "coverage": {
+        "walking": 10,
+        "cycling": 127.3,
+        "transit": 41.2,
+        "driving": 437.2,
+        "multimodal": 443.3
+      }
+    },
+    {
+      "id": "grid-51.576-0.092",
+      "name": "Aldborough",
+      "lat": 51.576,
+      "lng": 0.092,
+      "type": "grid",
+      "coverage": {
+        "walking": 10.3,
+        "cycling": 127.9,
+        "transit": 32.3,
+        "driving": 291.9,
+        "multimodal": 295.4
+      }
+    }
+  ],
+  "leaderboards": {
+    "walking": [
+      "highgate",
+      "hyde-park-corner",
+      "morden",
+      "catford",
+      "hampstead",
+      "grid-51.504--0.188",
+      "marble-arch",
+      "grid-51.450--0.300",
+      "grid-51.468-0.008",
+      "ealing-common",
+      "forest-hill",
+      "camden-town",
+      "clapham-common",
+      "manor-house",
+      "leytonstone",
+      "west-hampstead",
+      "bank",
+      "east-finchley",
+      "turnpike-lane",
+      "bethnal-green"
+    ],
+    "cycling": [
+      "grid-51.450-0.064",
+      "richmond",
+      "highgate",
+      "wimbledon",
+      "morden",
+      "east-finchley",
+      "finchley-central",
+      "grid-51.522--0.300",
+      "grid-51.450--0.300",
+      "grid-51.468--0.272",
+      "harrow-on-the-hill",
+      "neasden",
+      "hampstead",
+      "grid-51.576-0.008",
+      "grid-51.468-0.064",
+      "grid-51.468--0.300",
+      "grid-51.486--0.300",
+      "acton-town",
+      "stonebridge-park",
+      "grid-51.576--0.188"
+    ],
+    "transit": [
+      "whitechapel",
+      "liverpool-street",
+      "bond-street",
+      "waterloo",
+      "mile-end",
+      "canary-wharf",
+      "kings-cross",
+      "bank",
+      "baker-street",
+      "shadwell",
+      "vauxhall",
+      "stratford",
+      "london-bridge",
+      "oxford-circus",
+      "shepherds-bush",
+      "victoria",
+      "marble-arch",
+      "tottenham-court-road",
+      "highbury-islington",
+      "seven-sisters"
+    ],
+    "driving": [
+      "grid-51.522-0.064",
+      "grid-51.576-0.036",
+      "grid-51.558-0.064",
+      "stonebridge-park",
+      "edgware",
+      "grid-51.522--0.300",
+      "grid-51.576-0.064",
+      "neasden",
+      "grid-51.540--0.272",
+      "ealing-common",
+      "homerton",
+      "acton-town",
+      "grid-51.450-0.092",
+      "grid-51.486--0.272",
+      "grid-51.450-0.036",
+      "finchley-central",
+      "grid-51.540--0.300",
+      "grid-51.576--0.244",
+      "golders-green",
+      "leytonstone"
+    ],
+    "multimodal": [
+      "grid-51.522-0.064",
+      "grid-51.576-0.036",
+      "grid-51.558-0.064",
+      "stonebridge-park",
+      "edgware",
+      "grid-51.576-0.064",
+      "grid-51.522--0.300",
+      "neasden",
+      "grid-51.540--0.272",
+      "ealing-common",
+      "acton-town",
+      "homerton",
+      "grid-51.450-0.092",
+      "grid-51.486--0.272",
+      "grid-51.450-0.036",
+      "finchley-central",
+      "grid-51.540--0.300",
+      "grid-51.576--0.244",
+      "golders-green",
+      "leytonstone"
+    ]
+  }
+}
