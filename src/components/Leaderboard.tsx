@@ -83,7 +83,8 @@ export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
     <div>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full text-xs text-white/40 uppercase tracking-wider font-medium hover:text-white/60 transition-colors"
+        className="flex items-center justify-between w-full text-xs uppercase tracking-wider font-medium transition-colors"
+        style={{ color: 'var(--text-tertiary)' }}
       >
         <span>Coverage Leaderboard</span>
         <svg
@@ -107,19 +108,19 @@ export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
                 <button
                   key={key}
                   onClick={() => setSelectedMode(key)}
-                  className={`px-2 py-1 rounded text-xs transition-colors ${
-                    active
-                      ? 'border'
-                      : 'bg-white/5 text-white/30 border border-transparent hover:bg-white/10'
-                  }`}
+                  className="px-2 py-1 rounded text-xs transition-colors"
                   style={
                     active
                       ? {
                           backgroundColor: `${config.color}20`,
                           color: config.color,
-                          borderColor: `${config.color}40`,
+                          border: `1px solid ${config.color}40`,
                         }
-                      : undefined
+                      : {
+                          background: 'var(--input-bg)',
+                          color: 'var(--text-muted)',
+                          border: '1px solid transparent',
+                        }
                   }
                 >
                   {config.label}
@@ -133,7 +134,8 @@ export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
             <div className="flex items-center gap-1 flex-wrap">
               <button
                 onClick={() => setShowZoneInfo(!showZoneInfo)}
-                className="text-[10px] text-white/30 hover:text-white/50 transition-colors flex items-center gap-0.5"
+                className="text-[10px] transition-colors flex items-center gap-0.5"
+                style={{ color: 'var(--text-muted)' }}
               >
                 Zone
                 <svg
@@ -149,26 +151,41 @@ export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
                 <button
                   key={z.value}
                   onClick={() => setZoneFilter(z.value)}
-                  className={`px-1.5 py-0.5 rounded text-[10px] transition-colors ${
+                  className="px-1.5 py-0.5 rounded text-[10px] transition-colors"
+                  style={
                     zoneFilter === z.value
-                      ? 'bg-[#00d4ff]/15 text-[#00d4ff] border border-[#00d4ff]/30'
-                      : 'text-white/30 border border-transparent hover:text-white/50'
-                  }`}
+                      ? {
+                          background: 'var(--accent-bg)',
+                          color: 'var(--accent)',
+                          border: '1px solid var(--accent-border)',
+                        }
+                      : {
+                          color: 'var(--text-muted)',
+                          border: '1px solid transparent',
+                        }
+                  }
                 >
                   {z.label}
                 </button>
               ))}
             </div>
             {showZoneInfo && (
-              <div className="mt-1.5 p-2 rounded-lg bg-white/[0.03] border border-white/5 space-y-1">
-                <p className="text-[11px] text-white/40 leading-relaxed">
+              <div
+                className="mt-1.5 p-2 rounded-lg space-y-1"
+                style={{ background: 'var(--info-bg)', border: '1px solid var(--info-border)' }}
+              >
+                <p className="text-[11px] leading-relaxed" style={{ color: 'var(--text-tertiary)' }}>
                   Zones are based on distance from central London (Charing Cross):
                 </p>
                 <div className="grid grid-cols-2 gap-x-3 gap-y-0.5 text-[11px]">
-                  <span className="text-white/50">Central</span><span className="text-white/30">0 – 3 km</span>
-                  <span className="text-white/50">Inner</span><span className="text-white/30">3 – 8 km</span>
-                  <span className="text-white/50">Mid</span><span className="text-white/30">8 – 15 km</span>
-                  <span className="text-white/50">Outer</span><span className="text-white/30">15 km+</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>Central</span>
+                  <span style={{ color: 'var(--text-muted)' }}>0 – 3 km</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>Inner</span>
+                  <span style={{ color: 'var(--text-muted)' }}>3 – 8 km</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>Mid</span>
+                  <span style={{ color: 'var(--text-muted)' }}>8 – 15 km</span>
+                  <span style={{ color: 'var(--text-secondary)' }}>Outer</span>
+                  <span style={{ color: 'var(--text-muted)' }}>15 km+</span>
                 </div>
               </div>
             )}
@@ -187,8 +204,13 @@ export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
                 <button
                   key={point.id}
                   onClick={() => onSelectLocation(point.lat, point.lng, point.name)}
-                  className="flex items-center gap-2 w-full px-2 py-1.5 rounded-md text-left
-                             hover:bg-white/[0.05] transition-colors group"
+                  className="flex items-center gap-2 w-full px-2 py-1.5 rounded-md text-left transition-colors group"
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'var(--hover-bg)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = '';
+                  }}
                 >
                   <span
                     className="text-xs font-mono w-5 text-right shrink-0"
@@ -196,21 +218,29 @@ export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
                   >
                     {index + 1}
                   </span>
-                  <span className="text-sm text-white/70 group-hover:text-white truncate flex-1">
+                  <span
+                    className="text-sm truncate flex-1"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
                     {point.name}
                   </span>
-                  <span className="text-xs font-mono text-white/40 shrink-0">
+                  <span
+                    className="text-xs font-mono shrink-0"
+                    style={{ color: 'var(--text-tertiary)' }}
+                  >
                     {area} km²
                   </span>
                 </button>
               );
             })}
             {entries.length === 0 && (
-              <p className="text-xs text-white/30 py-2">No data for this zone</p>
+              <p className="text-xs py-2" style={{ color: 'var(--text-muted)' }}>
+                No data for this zone
+              </p>
             )}
           </div>
 
-          <p className="text-[10px] text-white/20 pt-1">
+          <p className="text-[10px] pt-1" style={{ color: 'var(--text-faint)' }}>
             Top 10 of {filteredCount} locations
             {zoneFilter !== 'all' ? ` in ${zoneFilter} London` : ''}
           </p>

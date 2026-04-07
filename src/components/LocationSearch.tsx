@@ -101,7 +101,7 @@ export default function LocationSearch({ onSelect, initialValue = '' }: Location
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const debounceRef = useRef<NodeJS.Timeout>();
+  const debounceRef = useRef<NodeJS.Timeout>(undefined);
 
   useEffect(() => {
     setQuery(initialValue);
@@ -164,7 +164,10 @@ export default function LocationSearch({ onSelect, initialValue = '' }: Location
 
   return (
     <div className="relative">
-      <label className="block text-xs text-white/40 uppercase tracking-wider mb-1.5 font-medium">
+      <label
+        className="block text-xs uppercase tracking-wider mb-1.5 font-medium"
+        style={{ color: 'var(--text-tertiary)' }}
+      >
         Search Location
       </label>
       <div className="relative">
@@ -176,30 +179,52 @@ export default function LocationSearch({ onSelect, initialValue = '' }: Location
           onFocus={() => suggestions.length > 0 && setIsOpen(true)}
           onBlur={() => setTimeout(() => setIsOpen(false), 200)}
           placeholder="e.g. Norbiton Station, SW1A 1AA"
-          className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-white
-                     text-sm placeholder:text-white/20 focus:outline-none focus:border-[#00d4ff]/50
-                     focus:ring-1 focus:ring-[#00d4ff]/25 transition-colors"
+          className="w-full rounded-lg px-3 py-2.5 text-sm transition-colors focus:outline-none"
+          style={{
+            background: 'var(--input-bg)',
+            border: '1px solid var(--input-border)',
+            color: 'var(--text-primary)',
+          }}
         />
         <div className="absolute right-3 top-1/2 -translate-y-1/2">
-          <svg className="w-4 h-4 text-white/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-4 h-4" style={{ color: 'var(--text-muted)' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
       </div>
 
       {isOpen && suggestions.length > 0 && (
-        <div className="absolute z-50 w-full mt-1 bg-[#0f1119] border border-white/10 rounded-lg overflow-hidden shadow-xl">
+        <div
+          className="absolute z-50 w-full mt-1 rounded-lg overflow-hidden shadow-xl"
+          style={{
+            background: 'var(--dropdown-bg)',
+            border: '1px solid var(--input-border)',
+          }}
+        >
           {suggestions.map((s, i) => (
             <button
               key={s.mapboxId}
               onMouseDown={() => handleSelect(s)}
-              className={`w-full text-left px-3 py-2 transition-colors
-                ${i === selectedIndex ? 'bg-[#00d4ff]/10' : 'hover:bg-white/5'}`}
+              className="w-full text-left px-3 py-2 transition-colors"
+              style={{
+                background: i === selectedIndex ? 'var(--accent-bg)' : undefined,
+              }}
+              onMouseEnter={(e) => {
+                if (i !== selectedIndex) e.currentTarget.style.background = 'var(--hover-bg)';
+              }}
+              onMouseLeave={(e) => {
+                if (i !== selectedIndex) e.currentTarget.style.background = '';
+              }}
             >
-              <div className={`text-sm ${i === selectedIndex ? 'text-[#00d4ff]' : 'text-white/80'}`}>
+              <div
+                className="text-sm"
+                style={{ color: i === selectedIndex ? 'var(--accent)' : 'var(--text-secondary)' }}
+              >
                 {s.label}
               </div>
-              <div className="text-xs text-white/30 truncate">{s.sublabel}</div>
+              <div className="text-xs truncate" style={{ color: 'var(--text-muted)' }}>
+                {s.sublabel}
+              </div>
             </button>
           ))}
         </div>

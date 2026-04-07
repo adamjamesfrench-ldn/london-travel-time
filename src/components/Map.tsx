@@ -5,6 +5,7 @@ import MapGL, { NavigationControl, type MapRef } from 'react-map-gl/mapbox';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { DEFAULT_CENTER, DEFAULT_ZOOM } from '@/lib/constants';
 import type { ParsedIsochrone } from '@/lib/geo-utils';
+import { useTheme } from '@/lib/theme';
 import IsochroneLayer from './IsochroneLayer';
 import OriginMarker from './OriginMarker';
 
@@ -15,10 +16,16 @@ interface MapProps {
   flyToTarget?: { lat: number; lng: number } | null;
 }
 
+const MAP_STYLES = {
+  dark: 'mapbox://styles/mapbox/dark-v11',
+  light: 'mapbox://styles/mapbox/light-v11',
+} as const;
+
 export default function Map({ origin, isochrones, onMapClick, flyToTarget }: MapProps) {
   const [mapLoaded, setMapLoaded] = useState(false);
-  const clickTimer = useRef<NodeJS.Timeout>();
+  const clickTimer = useRef<NodeJS.Timeout>(undefined);
   const mapRef = useRef<MapRef>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (flyToTarget && mapRef.current) {
@@ -55,7 +62,7 @@ export default function Map({ origin, isochrones, onMapClick, flyToTarget }: Map
         zoom: DEFAULT_ZOOM,
       }}
       style={{ width: '100%', height: '100%' }}
-      mapStyle="mapbox://styles/mapbox/dark-v11"
+      mapStyle={MAP_STYLES[theme]}
       mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
       onClick={handleClick}
       onDblClick={handleDblClick}

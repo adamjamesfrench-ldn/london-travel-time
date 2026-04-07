@@ -10,7 +10,10 @@ interface TimeSliderProps {
 export default function TimeSlider({ value, onChange }: TimeSliderProps) {
   return (
     <div>
-      <label className="block text-xs text-white/40 uppercase tracking-wider mb-1.5 font-medium">
+      <label
+        className="block text-xs uppercase tracking-wider mb-1.5 font-medium"
+        style={{ color: 'var(--text-tertiary)' }}
+      >
         Travel Time
       </label>
       <div className="flex items-center gap-3 mb-2">
@@ -21,9 +24,9 @@ export default function TimeSlider({ value, onChange }: TimeSliderProps) {
           step={5}
           value={value}
           onChange={(e) => onChange(Number(e.target.value))}
-          className="flex-1 accent-[#00d4ff] h-1"
+          className="flex-1 h-1"
         />
-        <span className="font-mono text-[#00d4ff] text-sm min-w-[3.5rem] text-right">
+        <span className="font-mono text-sm min-w-[3.5rem] text-right" style={{ color: 'var(--accent)' }}>
           {value} min
         </span>
       </div>
@@ -32,11 +35,20 @@ export default function TimeSlider({ value, onChange }: TimeSliderProps) {
           <button
             key={t}
             onClick={() => onChange(t)}
-            className={`px-2 py-1 rounded text-xs font-mono transition-colors
-              ${t === value
-                ? 'bg-[#00d4ff]/20 text-[#00d4ff] border border-[#00d4ff]/30'
-                : 'bg-white/5 text-white/40 border border-transparent hover:bg-white/10 hover:text-white/60'
-              }`}
+            className="px-2 py-1 rounded text-xs font-mono transition-colors"
+            style={
+              t === value
+                ? {
+                    background: 'var(--accent-bg)',
+                    color: 'var(--accent)',
+                    border: '1px solid var(--accent-border)',
+                  }
+                : {
+                    background: 'var(--input-bg)',
+                    color: 'var(--text-tertiary)',
+                    border: '1px solid transparent',
+                  }
+            }
           >
             {t}m
           </button>

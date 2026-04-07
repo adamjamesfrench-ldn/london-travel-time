@@ -13,7 +13,7 @@ export default function PostcodeSearch({ onSelect, initialValue = '' }: Postcode
   const [suggestions, setSuggestions] = useState<string[]>([]);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
-  const debounceRef = useRef<NodeJS.Timeout>();
+  const debounceRef = useRef<NodeJS.Timeout>(undefined);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {

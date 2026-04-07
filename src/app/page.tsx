@@ -145,7 +145,7 @@ export default function Home() {
   }, [activeModes, travelTime, departureTime]);
 
   return (
-    <main className="relative w-screen h-screen overflow-hidden bg-[#0a0c13]">
+    <main className="relative w-screen h-screen overflow-hidden" style={{ background: 'var(--background)' }}>
       <Map origin={origin} isochrones={isochrones} onMapClick={handleMapClick} flyToTarget={flyToTarget} />
       <ControlPanel
         onLocationSelect={handleLocationSelect}

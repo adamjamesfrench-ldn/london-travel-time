@@ -15,27 +15,43 @@ interface TimePickerProps {
 export default function TimePicker({ value, onChange }: TimePickerProps) {
   return (
     <div>
-      <label className="block text-xs text-white/40 uppercase tracking-wider mb-1.5 font-medium">
+      <label
+        className="block text-xs uppercase tracking-wider mb-1.5 font-medium"
+        style={{ color: 'var(--text-tertiary)' }}
+      >
         Departure Time
       </label>
       <input
         type="time"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-white
-                   font-mono text-sm focus:outline-none focus:border-[#00d4ff]/50 transition-colors
-                   [color-scheme:dark]"
+        className="w-full rounded-lg px-3 py-2 font-mono text-sm focus:outline-none transition-colors"
+        style={{
+          background: 'var(--input-bg)',
+          border: '1px solid var(--input-border)',
+          color: 'var(--text-primary)',
+          colorScheme: 'var(--color-scheme)',
+        }}
       />
       <div className="flex flex-wrap gap-1.5 mt-2">
         {PRESETS.map((p) => (
           <button
             key={p.time}
             onClick={() => onChange(p.time)}
-            className={`px-2 py-1 rounded text-xs transition-colors
-              ${value === p.time
-                ? 'bg-[#00d4ff]/20 text-[#00d4ff] border border-[#00d4ff]/30'
-                : 'bg-white/5 text-white/40 border border-transparent hover:bg-white/10 hover:text-white/60'
-              }`}
+            className="px-2 py-1 rounded text-xs transition-colors"
+            style={
+              value === p.time
+                ? {
+                    background: 'var(--accent-bg)',
+                    color: 'var(--accent)',
+                    border: '1px solid var(--accent-border)',
+                  }
+                : {
+                    background: 'var(--input-bg)',
+                    color: 'var(--text-tertiary)',
+                    border: '1px solid transparent',
+                  }
+            }
           >
             {p.label}
           </button>

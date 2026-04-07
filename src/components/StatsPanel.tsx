@@ -92,24 +92,31 @@ export default function StatsPanel({ postcode, district, isochrones, origin }: S
 
   return (
     <div>
-      <label className="block text-xs text-white/40 uppercase tracking-wider mb-1.5 font-medium">
+      <label
+        className="block text-xs uppercase tracking-wider mb-1.5 font-medium"
+        style={{ color: 'var(--text-tertiary)' }}
+      >
         Stats
       </label>
       <div className="space-y-2">
         <div className="flex justify-between items-baseline">
-          <span className="text-xs text-white/40">Location</span>
-          <span className="text-sm text-white truncate ml-2 text-right">{postcode}</span>
+          <span className="text-xs" style={{ color: 'var(--text-tertiary)' }}>Location</span>
+          <span className="text-sm truncate ml-2 text-right" style={{ color: 'var(--text-primary)' }}>
+            {postcode}
+          </span>
         </div>
         {district && (
           <div className="flex justify-between items-baseline">
-            <span className="text-xs text-white/40">District</span>
-            <span className="text-sm text-white/70">{district}</span>
+            <span className="text-xs" style={{ color: 'var(--text-tertiary)' }}>District</span>
+            <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>{district}</span>
           </div>
         )}
         {originZone && (
           <div className="flex justify-between items-baseline">
-            <span className="text-xs text-white/40">Zone</span>
-            <span className="text-sm text-white/70">{getZoneLabel(originZone)}</span>
+            <span className="text-xs" style={{ color: 'var(--text-tertiary)' }}>Zone</span>
+            <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+              {getZoneLabel(originZone)}
+            </span>
           </div>
         )}
 
@@ -117,16 +124,24 @@ export default function StatsPanel({ postcode, district, isochrones, origin }: S
         {coverageData && modeAreas.size > 0 && (
           <div className="pt-1">
             <div className="flex items-center gap-1.5 mb-2">
-              <span className="text-[10px] text-white/30">Compare vs</span>
+              <span className="text-[10px]" style={{ color: 'var(--text-muted)' }}>Compare vs</span>
               {COMPARE_OPTIONS.map((opt) => (
                 <button
                   key={opt.value}
                   onClick={() => setCompareMode(opt.value)}
-                  className={`px-1.5 py-0.5 rounded text-[10px] transition-colors ${
+                  className="px-1.5 py-0.5 rounded text-[10px] transition-colors"
+                  style={
                     compareMode === opt.value
-                      ? 'bg-[#00d4ff]/15 text-[#00d4ff] border border-[#00d4ff]/30'
-                      : 'text-white/30 border border-transparent hover:text-white/50'
-                  }`}
+                      ? {
+                          background: 'var(--accent-bg)',
+                          color: 'var(--accent)',
+                          border: '1px solid var(--accent-border)',
+                        }
+                      : {
+                          color: 'var(--text-muted)',
+                          border: '1px solid transparent',
+                        }
+                  }
                 >
                   {opt.label}
                 </button>
@@ -147,7 +162,7 @@ export default function StatsPanel({ postcode, district, isochrones, origin }: S
                 <span className="text-xs" style={{ color: TRANSPORT_MODES[mode].color }}>
                   {TRANSPORT_MODES[mode].label} ({band}m)
                 </span>
-                <span className="font-mono text-sm text-white/70">
+                <span className="font-mono text-sm" style={{ color: 'var(--text-secondary)' }}>
                   {area.toFixed(1)} km²
                 </span>
               </div>
@@ -157,7 +172,7 @@ export default function StatsPanel({ postcode, district, isochrones, origin }: S
                     className="w-1.5 h-1.5 rounded-full"
                     style={{ backgroundColor: getPercentileColor(percentile) }}
                   />
-                  <span className="text-[11px] text-white/40">
+                  <span className="text-[11px]" style={{ color: 'var(--text-tertiary)' }}>
                     {percentile >= 50
                       ? `Top ${Math.max(1, 100 - percentile)}%`
                       : `Bottom ${Math.max(1, percentile)}%`}
@@ -166,7 +181,9 @@ export default function StatsPanel({ postcode, district, isochrones, origin }: S
                       : compareMode === 'central'
                       ? ' in central'
                       : ' across London'}
-                    <span className="text-white/20"> ({comparisonPoints.length} locations)</span>
+                    <span style={{ color: 'var(--text-faint)' }}>
+                      {' '}({comparisonPoints.length} locations)
+                    </span>
                   </span>
                 </div>
               )}
