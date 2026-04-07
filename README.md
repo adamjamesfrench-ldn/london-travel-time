@@ -4,6 +4,19 @@ An interactive isochrone map showing everywhere reachable within a given time fr
 
 Built with Next.js, Mapbox GL, and the TravelTime API.
 
+![Dark mode — Liverpool Street with walking, cycling, and transit isochrones](docs/screenshot-dark.png)
+
+<details>
+<summary>More screenshots</summary>
+
+### Light mode
+![Light mode](docs/screenshot-light.png)
+
+### Stats panel with percentile ranking
+![Stats panel showing area coverage and percentile ranking per mode](docs/screenshot-stats.png)
+
+</details>
+
 ## What It Does
 
 - Enter any address, station name, or postcode and see a coloured overlay on the map showing how far you can travel in a given time
