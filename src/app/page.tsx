@@ -10,6 +10,27 @@ import { DEFAULT_MODES, DEFAULT_TRAVEL_TIME_MINUTES, type TransportMode } from '
 
 const Map = dynamic(() => import('@/components/Map'), { ssr: false });
 
+const MOBILE_BREAKPOINT = 768;
+
+function useMapPadding() {
+  const [padding, setPadding] = useState<{ top?: number; bottom?: number; left?: number; right?: number }>({ left: 332 });
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth < MOBILE_BREAKPOINT) {
+        // Bottom sheet at half-snap covers 50% of viewport
+        setPadding({ bottom: Math.round(window.innerHeight * 0.5) });
+      } else {
+        // Desktop sidebar: 300px panel + 16px margin + 16px inner padding
+        setPadding({ left: 332 });
+      }
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
+  return padding;
+}
+
 function getTimeBands(maxMinutes: number): number[] {
   const bands: number[] = [];
   if (maxMinutes >= 10) bands.push(10);
@@ -32,6 +53,7 @@ function buildDepartureISO(timeStr: string): string {
 }
 
 export default function Home() {
+  const mapPadding = useMapPadding();
   const [origin, setOrigin] = useState<{ lat: number; lng: number } | null>(null);
   const [locationName, setLocationName] = useState<string | null>(null);
   const [district, setDistrict] = useState<string | null>(null);
@@ -146,7 +168,13 @@ export default function Home() {
 
   return (
     <main className="relative w-screen h-screen overflow-hidden" style={{ background: 'var(--background)' }}>
-      <Map origin={origin} isochrones={isochrones} onMapClick={handleMapClick} flyToTarget={flyToTarget} />
+      <Map
+        origin={origin}
+        isochrones={isochrones}
+        onMapClick={handleMapClick}
+        flyToTarget={flyToTarget}
+        mapPadding={mapPadding}
+      />
       <ControlPanel
         onLocationSelect={handleLocationSelect}
         currentLocation={locationName}

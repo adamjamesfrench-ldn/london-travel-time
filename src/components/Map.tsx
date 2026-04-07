@@ -14,6 +14,8 @@ interface MapProps {
   isochrones: ParsedIsochrone[];
   onMapClick?: (lat: number, lng: number) => void;
   flyToTarget?: { lat: number; lng: number } | null;
+  /** Padding in pixels to offset the map center (e.g. for bottom sheet) */
+  mapPadding?: { top?: number; bottom?: number; left?: number; right?: number };
 }
 
 const MAP_STYLES = {
@@ -21,7 +23,7 @@ const MAP_STYLES = {
   light: 'mapbox://styles/mapbox/light-v11',
 } as const;
 
-export default function Map({ origin, isochrones, onMapClick, flyToTarget }: MapProps) {
+export default function Map({ origin, isochrones, onMapClick, flyToTarget, mapPadding }: MapProps) {
   const [mapLoaded, setMapLoaded] = useState(false);
   const clickTimer = useRef<NodeJS.Timeout>(undefined);
   const mapRef = useRef<MapRef>(null);
@@ -33,9 +35,10 @@ export default function Map({ origin, isochrones, onMapClick, flyToTarget }: Map
         center: [flyToTarget.lng, flyToTarget.lat],
         zoom: 12,
         duration: 1500,
+        padding: mapPadding || { top: 0, bottom: 0, left: 0, right: 0 },
       });
     }
-  }, [flyToTarget]);
+  }, [flyToTarget, mapPadding]);
 
   const handleClick = useCallback(
     (e: { lngLat: { lat: number; lng: number } }) => {
