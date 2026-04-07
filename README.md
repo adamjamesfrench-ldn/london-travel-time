@@ -26,7 +26,9 @@ Built with Next.js, Mapbox GL, and the TravelTime API.
 - **Percentile ranking** — see how your chosen location compares to 456 pre-computed points across London ("Top 5% for transit across London")
 - **Zone comparison** — compare against all London, same zone (central/inner/mid/outer), or central only
 - **Coverage leaderboard** showing which London locations offer the best reach per mode, filterable by zone
+- **Weekday vs weekend** departure toggle — uses real timetable differences (next weekday or Saturday schedule)
 - **Light/dark mode toggle** with preference saved to localStorage
+- **Mobile-responsive** — draggable bottom sheet on small screens with snap points (collapsed, half, full), desktop sidebar on larger screens
 - Click anywhere on the map to set a new origin point
 
 ## How It Works
@@ -69,6 +71,8 @@ This powers the percentile comparisons and leaderboard zone filtering.
 - **Next.js API route** (`/api/isochrone`) proxies requests to TravelTime so the API key stays server-side
 - **Mapbox Search Box API** handles location search with autocomplete (suggest + retrieve flow)
 - **CSS variable-based theming** with dark and light palettes, toggled via React context
+- **Responsive layout** — desktop sidebar with scrollable panel; mobile bottom sheet with drag-to-snap (collapsed/half/full) using pointer events
+- **Map padding** — `flyTo` offsets the center so the pin lands in the visible area (not behind the panel)
 - **Coverage data** is pre-computed via an offline analysis script and stored as a static JSON file (456 points across 5 transport modes)
 
 ## Getting Started
@@ -162,10 +166,11 @@ src/
     ControlPanel.tsx      # Side panel with all controls
     ModeToggles.tsx       # Transport mode switches
     TimeSlider.tsx        # Travel time control
-    TimePicker.tsx        # Departure time selector
+    TimePicker.tsx        # Departure time + weekday/weekend selector
     StatsPanel.tsx        # Area stats + percentile ranking
     Leaderboard.tsx       # Coverage rankings with zone filter
     ThemeToggle.tsx       # Light/dark mode switch
+    BottomSheet.tsx       # Draggable mobile bottom sheet
     OriginMarker.tsx      # Pulsing origin dot
   lib/
     constants.ts          # Colours, modes, defaults
