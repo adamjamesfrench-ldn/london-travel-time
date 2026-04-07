@@ -158,7 +158,9 @@ export default function StatsPanel({ postcode, district, isochrones, origin }: S
                     style={{ backgroundColor: getPercentileColor(percentile) }}
                   />
                   <span className="text-[11px] text-white/40">
-                    Top {100 - percentile}%
+                    {percentile >= 50
+                      ? `Top ${Math.max(1, 100 - percentile)}%`
+                      : `Bottom ${Math.max(1, percentile)}%`}
                     {compareMode === 'same_zone' && originZone
                       ? ` in ${originZone}`
                       : compareMode === 'central'
