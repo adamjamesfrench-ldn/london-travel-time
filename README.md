@@ -10,7 +10,10 @@ Built with Next.js, Mapbox GL, and the TravelTime API.
 - Switch between transport modes: walking, cycling, public transport, driving, and multimodal (park & ride)
 - Adjust travel time from 5 to 60 minutes with instant visual feedback
 - Change departure time to see how public transport coverage varies throughout the day
-- Coverage leaderboard showing which London locations offer the best reach per mode (pre-computed from 200+ sample points)
+- **Percentile ranking** — see how your chosen location compares to 456 pre-computed points across London ("Top 5% for transit across London")
+- **Zone comparison** — compare against all London, same zone (central/inner/mid/outer), or central only
+- **Coverage leaderboard** showing which London locations offer the best reach per mode, filterable by zone
+- **Light/dark mode toggle** with preference saved to localStorage
 - Click anywhere on the map to set a new origin point
 
 ## How It Works
@@ -19,9 +22,9 @@ The app uses three APIs:
 
 1. **[TravelTime API](https://traveltime.com)** - Computes isochrone polygons using real GTFS timetable data (TfL tube, bus, DLR, Overground, Elizabeth line, National Rail), OpenStreetMap road networks, and proprietary routing models. Returns GeoJSON-like polygons shaped by actual transport networks.
 
-2. **[Mapbox](https://mapbox.com)** - Dark-themed map rendering via Mapbox GL JS, and location search via the Mapbox Search Box API (supports addresses, station names, postcodes, and place names).
+2. **[Mapbox](https://mapbox.com)** - Map rendering (dark-v11 and light-v11 styles) via Mapbox GL JS, and location search via the Mapbox Search Box API (supports addresses, station names, postcodes, and place names).
 
-3. **[postcodes.io](https://postcodes.io)** - Free UK postcode geocoding (used in the coverage analysis script for reverse geocoding grid points).
+3. **[postcodes.io](https://postcodes.io)** / **[OpenStreetMap Nominatim](https://nominatim.openstreetmap.org)** - Free reverse geocoding used in the coverage analysis scripts for naming grid points.
 
 ### Transport Modes
 
@@ -35,11 +38,25 @@ The app uses three APIs:
 
 Public transport isochrones are a combined view - there is no way to isolate "tube only" or "bus only" because real journeys combine modes.
 
+### Zone Classification
+
+Locations are classified into zones based on distance from central London (Charing Cross):
+
+| Zone | Distance |
+|------|----------|
+| Central | 0 – 3 km |
+| Inner | 3 – 8 km |
+| Mid | 8 – 15 km |
+| Outer | 15 km+ |
+
+This powers the percentile comparisons and leaderboard zone filtering.
+
 ### Architecture
 
 - **Next.js API route** (`/api/isochrone`) proxies requests to TravelTime so the API key stays server-side
 - **Mapbox Search Box API** handles location search with autocomplete (suggest + retrieve flow)
-- **Coverage leaderboard** is pre-computed via an offline analysis script and stored as a static JSON file
+- **CSS variable-based theming** with dark and light palettes, toggled via React context
+- **Coverage data** is pre-computed via an offline analysis script and stored as a static JSON file (456 points across 5 transport modes)
 
 ## Getting Started
 
@@ -64,7 +81,7 @@ You need three API credentials (all have free tiers):
 
 ```bash
 # Clone the repository
-git clone https://github.com/adamjamesfrench/london-travel-time.git
+git clone https://github.com/adamjamesfrench-ldn/london-travel-time.git
 cd london-travel-time
 
 # Install dependencies
@@ -91,21 +108,29 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ### Coverage Analysis (Optional)
 
-The leaderboard data is pre-computed and included in the repo. To regenerate it with fresh data:
+The leaderboard and percentile data is pre-computed and included in the repo. To regenerate it with fresh data:
 
 ```bash
 npm run analyze
 ```
 
-This runs through ~280 sample points across London (tube stations + grid points), computing isochrone areas for each transport mode. It takes about 15-30 minutes due to API rate limits. The script is resumable - if interrupted, just run it again.
+This runs through 456 sample points across London (tube/rail stations + grid points at 3km spacing), computing isochrone areas for each of 5 transport modes. It takes about 30-60 minutes due to API rate limits. The script is resumable — if interrupted, just run it again and it will pick up where it left off.
+
+To fix any unnamed grid points:
+
+```bash
+npx tsx scripts/fix-grid-names.ts
+```
+
+This reverse geocodes grid points via OpenStreetMap Nominatim to replace coordinate names with area names (e.g. "Grid 51.350, -0.232" becomes "Stoneleigh").
 
 ## Tech Stack
 
 - **Framework**: Next.js 16 (App Router)
 - **Map**: Mapbox GL JS via react-map-gl
-- **Styling**: Tailwind CSS
+- **Styling**: Tailwind CSS + CSS variables for theming
 - **Isochrones**: TravelTime API
-- **Geocoding**: Mapbox Search Box API + postcodes.io
+- **Geocoding**: Mapbox Search Box API + postcodes.io + Nominatim
 - **GeoJSON**: @turf/turf for area calculations
 
 ## Project Structure
@@ -115,6 +140,8 @@ src/
   app/
     page.tsx              # Main page with state management
     api/isochrone/route.ts # Server-side TravelTime API proxy
+    globals.css           # CSS variables for dark/light themes
+    layout.tsx            # Root layout with ThemeProvider
   components/
     Map.tsx               # Mapbox GL map with isochrone layers
     IsochroneLayer.tsx    # GeoJSON polygon rendering
@@ -123,19 +150,22 @@ src/
     ModeToggles.tsx       # Transport mode switches
     TimeSlider.tsx        # Travel time control
     TimePicker.tsx        # Departure time selector
-    StatsPanel.tsx        # Area statistics
-    Leaderboard.tsx       # Coverage rankings
+    StatsPanel.tsx        # Area stats + percentile ranking
+    Leaderboard.tsx       # Coverage rankings with zone filter
+    ThemeToggle.tsx       # Light/dark mode switch
     OriginMarker.tsx      # Pulsing origin dot
   lib/
     constants.ts          # Colours, modes, defaults
     traveltime.ts         # TravelTime request builder
     geo-utils.ts          # Shape conversion + area calc
-    postcodes.ts          # postcodes.io client
+    zones.ts              # Zone classification (central/inner/mid/outer)
+    theme.tsx             # Theme context + provider
   data/
-    sample-points.ts      # 150+ station coords + grid generator
-    coverage-results.json # Pre-computed leaderboard data
+    sample-points.ts      # 456 station coords + grid generator
+    coverage-results.json # Pre-computed coverage data (456 points × 5 modes)
 scripts/
-  analyze-coverage.ts     # Offline coverage analysis
+  analyze-coverage.ts     # Offline coverage analysis (resumable)
+  fix-grid-names.ts       # Reverse geocode unnamed grid points
 ```
 
 ## License
