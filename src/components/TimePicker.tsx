@@ -1,5 +1,7 @@
 'use client';
 
+import type { DayType } from '@/lib/constants';
+
 const PRESETS = [
   { label: 'Morning Peak', time: '08:30' },
   { label: 'Midday', time: '12:00' },
@@ -10,9 +12,11 @@ const PRESETS = [
 interface TimePickerProps {
   value: string; // HH:mm
   onChange: (time: string) => void;
+  dayType: DayType;
+  onDayTypeChange: (dayType: DayType) => void;
 }
 
-export default function TimePicker({ value, onChange }: TimePickerProps) {
+export default function TimePicker({ value, onChange, dayType, onDayTypeChange }: TimePickerProps) {
   return (
     <div>
       <label
@@ -21,6 +25,34 @@ export default function TimePicker({ value, onChange }: TimePickerProps) {
       >
         Departure Time
       </label>
+
+      {/* Weekday / Weekend toggle */}
+      <div className="flex rounded-lg overflow-hidden mb-2" style={{ border: '1px solid var(--input-border)' }}>
+        <button
+          onClick={() => onDayTypeChange('weekday')}
+          className="flex-1 px-3 py-1.5 text-xs font-medium transition-colors"
+          style={
+            dayType === 'weekday'
+              ? { background: 'var(--accent-bg)', color: 'var(--accent)' }
+              : { background: 'var(--input-bg)', color: 'var(--text-muted)' }
+          }
+        >
+          Weekday
+        </button>
+        <button
+          onClick={() => onDayTypeChange('weekend')}
+          className="flex-1 px-3 py-1.5 text-xs font-medium transition-colors"
+          style={{
+            ...(dayType === 'weekend'
+              ? { background: 'var(--accent-bg)', color: 'var(--accent)' }
+              : { background: 'var(--input-bg)', color: 'var(--text-muted)' }),
+            borderLeft: '1px solid var(--input-border)',
+          }}
+        >
+          Weekend
+        </button>
+      </div>
+
       <input
         type="time"
         value={value}
@@ -57,6 +89,12 @@ export default function TimePicker({ value, onChange }: TimePickerProps) {
           </button>
         ))}
       </div>
+
+      <p className="text-[10px] mt-1.5" style={{ color: 'var(--text-faint)' }}>
+        {dayType === 'weekday'
+          ? 'Uses next weekday timetable'
+          : 'Uses next Saturday timetable'}
+      </p>
     </div>
   );
 }

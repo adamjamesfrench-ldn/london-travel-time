@@ -36,6 +36,8 @@ export const DEFAULT_ZOOM = 11;
 export const DEFAULT_TRAVEL_TIME_MINUTES = 30;
 export const DEFAULT_MODES: TransportMode[] = ['transit'];
 
+export type DayType = 'weekday' | 'weekend';
+
 export const LAYER_OPACITY: Record<number, { fill: number; border: boolean; borderOpacity: number }> = {
   30: { fill: 0.06, border: true, borderOpacity: 0.4 },
   20: { fill: 0.08, border: false, borderOpacity: 0 },

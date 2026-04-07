@@ -9,7 +9,7 @@ import StatsPanel from './StatsPanel';
 import Leaderboard from './Leaderboard';
 import ThemeToggle from './ThemeToggle';
 import BottomSheet from './BottomSheet';
-import type { TransportMode } from '@/lib/constants';
+import type { TransportMode, DayType } from '@/lib/constants';
 import type { ParsedIsochrone } from '@/lib/geo-utils';
 
 interface ControlPanelProps {
@@ -22,6 +22,8 @@ interface ControlPanelProps {
   onModesChange: (modes: TransportMode[]) => void;
   departureTime: string;
   onDepartureTimeChange: (time: string) => void;
+  dayType: DayType;
+  onDayTypeChange: (dayType: DayType) => void;
   isochrones: ParsedIsochrone[];
   isLoading: boolean;
   origin: { lat: number; lng: number } | null;
@@ -49,6 +51,8 @@ function PanelContent({
   onModesChange,
   departureTime,
   onDepartureTimeChange,
+  dayType,
+  onDayTypeChange,
   isochrones,
   isLoading,
   origin,
@@ -60,7 +64,7 @@ function PanelContent({
       <LocationSearch onSelect={onLocationSelect} initialValue={currentLocation || ''} />
       <TimeSlider value={travelTime} onChange={onTravelTimeChange} />
       <ModeToggles activeModes={activeModes} onChange={onModesChange} />
-      <TimePicker value={departureTime} onChange={onDepartureTimeChange} />
+      <TimePicker value={departureTime} onChange={onDepartureTimeChange} dayType={dayType} onDayTypeChange={onDayTypeChange} />
 
       {isLoading && (
         <div className="flex items-center gap-2 text-xs" style={{ color: 'var(--text-muted)' }}>

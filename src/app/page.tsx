@@ -6,7 +6,7 @@ import ControlPanel from '@/components/ControlPanel';
 import { fetchIsochrones } from '@/lib/traveltime';
 import type { LocationResult } from '@/components/LocationSearch';
 import { parseResults, type ParsedIsochrone } from '@/lib/geo-utils';
-import { DEFAULT_MODES, DEFAULT_TRAVEL_TIME_MINUTES, type TransportMode } from '@/lib/constants';
+import { DEFAULT_MODES, DEFAULT_TRAVEL_TIME_MINUTES, type TransportMode, type DayType } from '@/lib/constants';
 
 const Map = dynamic(() => import('@/components/Map'), { ssr: false });
 
@@ -41,13 +41,21 @@ function getTimeBands(maxMinutes: number): number[] {
   return bands;
 }
 
-function buildDepartureISO(timeStr: string): string {
+function buildDepartureISO(timeStr: string, dayType: DayType = 'weekday'): string {
   const [h, m] = timeStr.split(':').map(Number);
   const now = new Date();
   const date = new Date(now);
-  do {
-    date.setDate(date.getDate() + 1);
-  } while (date.getDay() === 0 || date.getDay() === 6);
+  if (dayType === 'weekend') {
+    // Find next Saturday
+    do {
+      date.setDate(date.getDate() + 1);
+    } while (date.getDay() !== 6);
+  } else {
+    // Find next weekday
+    do {
+      date.setDate(date.getDate() + 1);
+    } while (date.getDay() === 0 || date.getDay() === 6);
+  }
   date.setHours(h, m, 0, 0);
   return date.toISOString();
 }
@@ -60,6 +68,7 @@ export default function Home() {
   const [travelTime, setTravelTime] = useState(DEFAULT_TRAVEL_TIME_MINUTES);
   const [activeModes, setActiveModes] = useState<TransportMode[]>(DEFAULT_MODES);
   const [departureTime, setDepartureTime] = useState('08:30');
+  const [dayType, setDayType] = useState<DayType>('weekday');
   const [isochrones, setIsochrones] = useState<ParsedIsochrone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -91,7 +100,7 @@ export default function Home() {
   }, [locationName, travelTime, activeModes, departureTime]);
 
   const loadIsochrones = useCallback(
-    async (lat: number, lng: number, modes: TransportMode[], minutes: number, depTime: string) => {
+    async (lat: number, lng: number, modes: TransportMode[], minutes: number, depTime: string, day: DayType) => {
       if (modes.length === 0) {
         setIsochrones([]);
         return;
@@ -107,7 +116,7 @@ export default function Home() {
           lng,
           modes,
           timeBands: getTimeBands(minutes),
-          departureTime: buildDepartureISO(depTime),
+          departureTime: buildDepartureISO(depTime, day),
         });
 
         if (id === fetchRef.current) {
@@ -133,9 +142,9 @@ export default function Home() {
       setDistrict(location.district);
       setOrigin({ lat: location.lat, lng: location.lng });
       setFlyToTarget({ lat: location.lat, lng: location.lng });
-      loadIsochrones(location.lat, location.lng, activeModes, travelTime, departureTime);
+      loadIsochrones(location.lat, location.lng, activeModes, travelTime, departureTime, dayType);
     },
-    [activeModes, travelTime, departureTime, loadIsochrones]
+    [activeModes, travelTime, departureTime, dayType, loadIsochrones]
   );
 
   const handleMapClick = useCallback(
@@ -143,9 +152,9 @@ export default function Home() {
       setOrigin({ lat, lng });
       setLocationName(`${lat.toFixed(4)}, ${lng.toFixed(4)}`);
       setDistrict(null);
-      loadIsochrones(lat, lng, activeModes, travelTime, departureTime);
+      loadIsochrones(lat, lng, activeModes, travelTime, departureTime, dayType);
     },
-    [activeModes, travelTime, departureTime, loadIsochrones]
+    [activeModes, travelTime, departureTime, dayType, loadIsochrones]
   );
 
   const handleLeaderboardSelect = useCallback(
@@ -154,17 +163,17 @@ export default function Home() {
       setLocationName(name);
       setDistrict(null);
       setFlyToTarget({ lat, lng });
-      loadIsochrones(lat, lng, activeModes, travelTime, departureTime);
+      loadIsochrones(lat, lng, activeModes, travelTime, departureTime, dayType);
     },
-    [activeModes, travelTime, departureTime, loadIsochrones]
+    [activeModes, travelTime, departureTime, dayType, loadIsochrones]
   );
 
   useEffect(() => {
     if (origin) {
-      loadIsochrones(origin.lat, origin.lng, activeModes, travelTime, departureTime);
+      loadIsochrones(origin.lat, origin.lng, activeModes, travelTime, departureTime, dayType);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeModes, travelTime, departureTime]);
+  }, [activeModes, travelTime, departureTime, dayType]);
 
   return (
     <main className="relative w-screen h-screen overflow-hidden" style={{ background: 'var(--background)' }}>
@@ -185,6 +194,8 @@ export default function Home() {
         onModesChange={setActiveModes}
         departureTime={departureTime}
         onDepartureTimeChange={setDepartureTime}
+        dayType={dayType}
+        onDayTypeChange={setDayType}
         isochrones={isochrones}
         isLoading={isLoading}
         origin={origin}
