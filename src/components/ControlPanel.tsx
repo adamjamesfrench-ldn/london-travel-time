@@ -21,6 +21,7 @@ interface ControlPanelProps {
   onDepartureTimeChange: (time: string) => void;
   isochrones: ParsedIsochrone[];
   isLoading: boolean;
+  origin: { lat: number; lng: number } | null;
   onLeaderboardSelect: (lat: number, lng: number, name: string) => void;
 }
 
@@ -36,6 +37,7 @@ export default function ControlPanel({
   onDepartureTimeChange,
   isochrones,
   isLoading,
+  origin,
   onLeaderboardSelect,
 }: ControlPanelProps) {
   return (
@@ -71,6 +73,7 @@ export default function ControlPanel({
           postcode={currentLocation}
           district={currentDistrict}
           isochrones={isochrones}
+          origin={origin}
         />
 
         <Leaderboard onSelectLocation={onLeaderboardSelect} />

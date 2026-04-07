@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { TRANSPORT_MODES, type TransportMode } from '@/lib/constants';
+import { classifyZone, type Zone } from '@/lib/zones';
 
 interface CoveragePoint {
   id: string;
@@ -9,6 +10,7 @@ interface CoveragePoint {
   lat: number;
   lng: number;
   type: string;
+  zone?: string;
   coverage: Record<string, number>;
 }
 
@@ -39,14 +41,43 @@ const MODE_KEYS: { key: string; mode: TransportMode }[] = [
   { key: 'multimodal', mode: 'multimodal' },
 ];
 
+type ZoneFilter = 'all' | Zone;
+
+const ZONE_FILTERS: { value: ZoneFilter; label: string }[] = [
+  { value: 'all', label: 'All' },
+  { value: 'central', label: 'Central' },
+  { value: 'inner', label: 'Inner' },
+  { value: 'mid', label: 'Mid' },
+  { value: 'outer', label: 'Outer' },
+];
+
 export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedMode, setSelectedMode] = useState<string>('transit');
+  const [zoneFilter, setZoneFilter] = useState<ZoneFilter>('all');
+  const [showZoneInfo, setShowZoneInfo] = useState(false);
+
+  // Compute sorted leaderboard filtered by zone
+  const { entries, filteredCount } = useMemo(() => {
+    if (!coverageData) return { entries: [], filteredCount: 0 };
+
+    let points = coverageData.points.filter(
+      (p) => p.coverage[selectedMode] !== undefined && p.coverage[selectedMode] > 0
+    );
+
+    if (zoneFilter !== 'all') {
+      points = points.filter((p) => {
+        const zone = p.zone || classifyZone(p.lat, p.lng);
+        return zone === zoneFilter;
+      });
+    }
+
+    points.sort((a, b) => (b.coverage[selectedMode] || 0) - (a.coverage[selectedMode] || 0));
+
+    return { entries: points.slice(0, 10), filteredCount: points.length };
+  }, [selectedMode, zoneFilter]);
 
   if (!coverageData) return null;
-
-  const leaderboard = coverageData.leaderboards[selectedMode] || [];
-  const pointsMap = new Map(coverageData.points.map((p) => [p.id, p]));
 
   return (
     <div>
@@ -97,11 +128,55 @@ export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
             })}
           </div>
 
+          {/* Zone filter */}
+          <div>
+            <div className="flex items-center gap-1 flex-wrap">
+              <button
+                onClick={() => setShowZoneInfo(!showZoneInfo)}
+                className="text-[10px] text-white/30 hover:text-white/50 transition-colors flex items-center gap-0.5"
+              >
+                Zone
+                <svg
+                  className={`w-3 h-3 transition-transform ${showZoneInfo ? 'rotate-180' : ''}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {ZONE_FILTERS.map((z) => (
+                <button
+                  key={z.value}
+                  onClick={() => setZoneFilter(z.value)}
+                  className={`px-1.5 py-0.5 rounded text-[10px] transition-colors ${
+                    zoneFilter === z.value
+                      ? 'bg-[#00d4ff]/15 text-[#00d4ff] border border-[#00d4ff]/30'
+                      : 'text-white/30 border border-transparent hover:text-white/50'
+                  }`}
+                >
+                  {z.label}
+                </button>
+              ))}
+            </div>
+            {showZoneInfo && (
+              <div className="mt-1.5 p-2 rounded-lg bg-white/[0.03] border border-white/5 space-y-1">
+                <p className="text-[11px] text-white/40 leading-relaxed">
+                  Zones are based on distance from central London (Charing Cross):
+                </p>
+                <div className="grid grid-cols-2 gap-x-3 gap-y-0.5 text-[11px]">
+                  <span className="text-white/50">Central</span><span className="text-white/30">0 – 3 km</span>
+                  <span className="text-white/50">Inner</span><span className="text-white/30">3 – 8 km</span>
+                  <span className="text-white/50">Mid</span><span className="text-white/30">8 – 15 km</span>
+                  <span className="text-white/50">Outer</span><span className="text-white/30">15 km+</span>
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Leaderboard list */}
           <div className="space-y-0.5">
-            {leaderboard.slice(0, 10).map((id, index) => {
-              const point = pointsMap.get(id);
-              if (!point) return null;
+            {entries.map((point, index) => {
               const area = point.coverage[selectedMode];
               const modeConfig =
                 TRANSPORT_MODES[
@@ -110,7 +185,7 @@ export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
 
               return (
                 <button
-                  key={id}
+                  key={point.id}
                   onClick={() => onSelectLocation(point.lat, point.lng, point.name)}
                   className="flex items-center gap-2 w-full px-2 py-1.5 rounded-md text-left
                              hover:bg-white/[0.05] transition-colors group"
@@ -130,11 +205,14 @@ export default function Leaderboard({ onSelectLocation }: LeaderboardProps) {
                 </button>
               );
             })}
+            {entries.length === 0 && (
+              <p className="text-xs text-white/30 py-2">No data for this zone</p>
+            )}
           </div>
 
           <p className="text-[10px] text-white/20 pt-1">
-            Based on {coverageData.travelTimeMinutes}-min isochrone area from{' '}
-            {coverageData.totalPoints} sample points
+            Top 10 of {filteredCount} locations
+            {zoneFilter !== 'all' ? ` in ${zoneFilter} London` : ''}
           </p>
         </div>
       )}

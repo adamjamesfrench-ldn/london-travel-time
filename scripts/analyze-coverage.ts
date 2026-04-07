@@ -30,6 +30,7 @@ interface PointResult {
   lat: number;
   lng: number;
   type: string;
+  zone?: string;
   coverage: Record<string, number>;
 }
 
@@ -115,8 +116,17 @@ async function fetchBatch(
 }
 
 function loadProgress(): ProgressData {
+  // First check the progress file (in-flight data)
   if (existsSync(PROGRESS_FILE)) {
     return JSON.parse(readFileSync(PROGRESS_FILE, 'utf-8'));
+  }
+  // Fall back to the output file (previously completed runs)
+  if (existsSync(OUTPUT_FILE)) {
+    const output = JSON.parse(readFileSync(OUTPUT_FILE, 'utf-8'));
+    if (output.points) {
+      console.log(`Loaded ${output.points.length} points from previous results.`);
+      return { results: output.points };
+    }
   }
   return { results: [] };
 }
@@ -236,8 +246,29 @@ async function enrichGridNames(results: PointResult[]): Promise<void> {
   }
 }
 
+function classifyZone(lat: number, lng: number): string {
+  const R = 6371;
+  const cLat = 51.5074, cLng = -0.1278;
+  const dLat = ((lat - cLat) * Math.PI) / 180;
+  const dLng = ((lng - cLng) * Math.PI) / 180;
+  const a = Math.sin(dLat / 2) ** 2 +
+    Math.cos((cLat * Math.PI) / 180) * Math.cos((lat * Math.PI) / 180) * Math.sin(dLng / 2) ** 2;
+  const dist = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  if (dist <= 3) return 'central';
+  if (dist <= 8) return 'inner';
+  if (dist <= 15) return 'mid';
+  return 'outer';
+}
+
 async function buildOutput(results: PointResult[], allPoints: SamplePoint[]) {
   await enrichGridNames(results);
+
+  // Add zone classification
+  for (const point of results) {
+    point.zone = classifyZone(point.lat, point.lng);
+  }
+  const zoneCounts = results.reduce((acc, p) => { acc[p.zone!] = (acc[p.zone!] || 0) + 1; return acc; }, {} as Record<string, number>);
+  console.log('\nZone distribution:', zoneCounts);
 
   // Build leaderboards - top 20 per mode
   const modeKeys = MODES.map((m) => m.key);
@@ -273,11 +304,11 @@ async function buildOutput(results: PointResult[], allPoints: SamplePoint[]) {
     }
   }
 
-  // Clean up progress file
+  // Clean up progress file (data is now safe in the output file)
   if (existsSync(PROGRESS_FILE)) {
     const { unlinkSync } = require('fs');
     unlinkSync(PROGRESS_FILE);
-    console.log('\nProgress file cleaned up.');
+    console.log('\nProgress file cleaned up (results preserved in output file).');
   }
 }
 

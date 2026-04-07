@@ -159,6 +159,7 @@ export default function Home() {
         onDepartureTimeChange={setDepartureTime}
         isochrones={isochrones}
         isLoading={isLoading}
+        origin={origin}
         onLeaderboardSelect={handleLeaderboardSelect}
       />
       {error && (
