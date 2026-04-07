@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   description: "Interactive isochrone maps showing everywhere reachable within a given time from any London postcode",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

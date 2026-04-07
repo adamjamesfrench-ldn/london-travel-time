@@ -163,7 +163,7 @@ export default function Home() {
         onLeaderboardSelect={handleLeaderboardSelect}
       />
       {error && (
-        <div className="absolute bottom-4 right-4 z-20 bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3 text-red-400 text-sm max-w-sm">
+        <div className="absolute top-4 right-4 md:top-auto md:bottom-4 z-20 bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3 text-red-400 text-sm max-w-sm">
           {error}
         </div>
       )}
